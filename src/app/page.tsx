@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Credibilidade />
       <Evento />
+      <Credibilidade />
       <Sobre />
       <CtaFinal />
       <Newsletter />

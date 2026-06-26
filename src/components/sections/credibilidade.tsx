@@ -1,17 +1,64 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
-const logos = [
-  "SíndicoNet",
-  "AABIC",
-  "SECOVI",
-  "ABADI",
-  "SIPCES",
-  "CondomínioSC",
-  "APSA",
-  "CIPA",
+const partners = [
+  { name: "SECOVI", width: 130, render: (
+    <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="4" width="8" height="28" rx="2" fill="#ffffff" opacity="0.7"/>
+      <text x="16" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="800" letterSpacing="4">SECOVI</text>
+    </svg>
+  )},
+  { name: "AABIC", width: 110, render: (
+    <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="5">AABIC</text>
+    </svg>
+  )},
+  { name: "SíndicoNet", width: 150, render: (
+    <svg viewBox="0 0 150 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="700">Síndico</text>
+      <text x="80" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="300">Net</text>
+    </svg>
+  )},
+  { name: "ABADI", width: 110, render: (
+    <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="6">ABADI</text>
+    </svg>
+  )},
+  { name: "Graiche", width: 120, render: (
+    <svg viewBox="0 0 120 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="28" fill="#ffffff" fontFamily="var(--font-cormorant)" fontSize="30" fontWeight="600" fontStyle="italic">Graiche</text>
+    </svg>
+  )},
+  { name: "CIPA", width: 100, render: (
+    <svg viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="14" cy="18" r="12" stroke="#ffffff" strokeWidth="2.5" fill="none" opacity="0.6"/>
+      <text x="32" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="3">CIPA</text>
+    </svg>
+  )},
+  { name: "APSA", width: 100, render: (
+    <svg viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="28" fontWeight="800" letterSpacing="6">APSA</text>
+    </svg>
+  )},
+  { name: "Lello", width: 90, render: (
+    <svg viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="28" fill="#ffffff" fontFamily="var(--font-cormorant)" fontSize="32" fontWeight="500" letterSpacing="2">Lello</text>
+    </svg>
+  )},
+  { name: "SIPCES", width: 120, render: (
+    <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="8" width="4" height="20" rx="1" fill="#ffffff" opacity="0.5"/>
+      <text x="10" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="700" letterSpacing="5">SIPCES</text>
+    </svg>
+  )},
+  { name: "CondoSC", width: 130, render: (
+    <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="600">Condo</text>
+      <text x="66" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="800">SC</text>
+    </svg>
+  )},
 ];
 
 const stats = [
@@ -29,12 +76,10 @@ function AnimatedNumber({ value, suffix, inView }: { value: number; suffix: stri
     const duration = 1800;
     const steps = 60;
     const increment = value / steps;
-    let current = 0;
     let step = 0;
     const timer = setInterval(() => {
       step++;
-      current = Math.min(Math.round(increment * step), value);
-      setDisplay(current);
+      setDisplay(Math.min(Math.round(increment * step), value));
       if (step >= steps) clearInterval(timer);
     }, duration / steps);
     return () => clearInterval(timer);
@@ -56,41 +101,37 @@ export function Credibilidade() {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section className="relative py-16 lg:py-20 overflow-hidden border-y border-white/[0.04]">
+    <section className="relative py-20 lg:py-28 overflow-hidden border-y border-white/[0.04]">
       <div className="absolute inset-0 bg-[var(--color-bg-light)]" />
       <div className="absolute inset-0 noise pointer-events-none" />
 
       <div className="relative z-10">
         {/* Scrolling logos */}
-        <div className="mb-14 lg:mb-16 overflow-hidden">
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="flex gap-16 whitespace-nowrap"
-          >
-            {[...logos, ...logos].map((name, i) => (
+        <div className="mb-16 lg:mb-20 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex w-max animate-marquee items-center">
+            {[...partners, ...partners].map((p, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 text-white/20 text-sm tracking-[0.15em] uppercase font-medium shrink-0"
+                className="shrink-0 opacity-60 hover:opacity-90 transition-opacity duration-500 mx-8 lg:mx-12"
+                style={{ width: p.width }}
               >
-                <div className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/[0.08]" />
-                {name}
+                {p.render}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Animated numbers */}
         <div
           ref={ref}
-          className="max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+          className="max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-2 tabular-nums">
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gradient mb-3 tabular-nums">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} inView={inView} />
               </p>
-              <p className="text-white/30 text-xs sm:text-sm tracking-[0.1em] uppercase">
+              <p className="text-white/50 text-sm sm:text-base tracking-[0.08em] uppercase">
                 {stat.label}
               </p>
             </div>

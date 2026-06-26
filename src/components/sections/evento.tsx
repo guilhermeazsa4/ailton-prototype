@@ -3,7 +3,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
-import { BlurReveal } from "@/components/blur-reveal";
 
 function useCountdown(targetDate: Date) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -29,111 +28,128 @@ function useCountdown(targetDate: Date) {
   return timeLeft;
 }
 
-const eventDate = new Date("2026-09-18T09:00:00");
+const eventDate = new Date("2026-07-16T09:00:00");
+
+const sectionReveal = {
+  hidden: { opacity: 0, y: 80, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const childReveal = (delay: number) => ({
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
+  },
+});
 
 export function Evento() {
   const countdown = useCountdown(eventDate);
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <section id="evento" className="relative py-32 lg:py-48 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-prussian" />
+    <motion.section
+      ref={ref}
+      id="evento"
+      className="relative min-h-[85vh] flex items-center overflow-hidden"
+      variants={sectionReveal}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      {/* Background image */}
+      <img
+        src="/assets/BannerEventoLivro.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      {/* Dramatic glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-blue-accent/15 blur-[200px]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-cyan-accent/8 blur-[150px]" />
-      </div>
+      {/* Dark overlay — só lado esquerdo pro texto */}
+      <div className="absolute inset-0 bg-gradient-to-r from-prussian/95 via-prussian/50 via-[55%] to-transparent to-[70%]" />
 
       <div className="absolute inset-0 noise pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20">
-        {/* Section label */}
-        <BlurReveal>
-          <p className="text-gradient-subtle text-xs tracking-[0.5em] uppercase mb-4 text-center">
-            O Evento
-          </p>
-        </BlurReveal>
+      {/* Content — left aligned */}
+      <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 w-full py-32 lg:py-40">
+        <div className="max-w-2xl">
+          <motion.p
+            variants={childReveal(0.1)}
+            className="text-gradient-subtle text-xs tracking-[0.5em] uppercase mb-6"
+          >
+            Lançamento Oficial
+          </motion.p>
 
-        {/* Stage image */}
-        <BlurReveal delay={0.1}>
-          <div className="relative aspect-[21/9] max-w-[1400px] mx-auto rounded-3xl overflow-hidden mb-20 lg:mb-28 border border-white/[0.06]">
-            <img
-              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80"
-              alt="Palco do evento"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-prussian via-prussian/30 to-transparent" />
-            <div className="absolute inset-0 bg-blue-accent/15 mix-blend-overlay" />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[60%] bg-gradient-to-b from-cyan-accent/8 to-transparent blur-2xl" />
-          </div>
-        </BlurReveal>
+          <motion.h2
+            variants={childReveal(0.2)}
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.05] mb-8"
+          >
+            O evento que revela a nova{" "}
+            <span className="font-serif italic text-gradient">
+              estratégia
+            </span>{" "}
+            da gestão.
+          </motion.h2>
 
-        {/* Event info */}
-        <div className="text-center max-w-4xl mx-auto">
-          <BlurReveal delay={0.2}>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-[1.05] mb-8">
-              A experiência que{" "}
-              <span className="font-serif italic text-gradient">
-                redefine
-              </span>{" "}
-              a gestão.
-            </h2>
-          </BlurReveal>
-
-          <BlurReveal delay={0.3}>
-            <div className="flex flex-wrap items-center justify-center gap-8 mb-14">
-              <div className="flex items-center gap-3 text-white/60">
-                <Calendar size={18} className="text-cyan-accent/70" />
-                <span className="text-lg lg:text-xl font-light tracking-wide">
-                  18 de Setembro, 2026
-                </span>
-              </div>
-              <div className="w-px h-6 bg-white/10 hidden sm:block" />
-              <div className="flex items-center gap-3 text-white/60">
-                <MapPin size={18} className="text-cyan-accent/70" />
-                <span className="text-lg lg:text-xl font-light tracking-wide">
-                  São Paulo, SP
-                </span>
-              </div>
+          <motion.div
+            variants={childReveal(0.3)}
+            className="flex flex-wrap gap-6 mb-12"
+          >
+            <div className="flex items-center gap-3 text-white/70">
+              <Calendar size={16} className="text-cyan-accent/70" />
+              <span className="text-sm lg:text-base font-light tracking-wide">
+                16 de Julho, 2026
+              </span>
             </div>
-          </BlurReveal>
+            <div className="flex items-center gap-3 text-white/70">
+              <MapPin size={16} className="text-cyan-accent/70" />
+              <span className="text-sm lg:text-base font-light tracking-wide">
+                Arena da Baixada — Curitiba, PR
+              </span>
+            </div>
+          </motion.div>
 
           {/* Countdown */}
-          <BlurReveal delay={0.4}>
-            <div className="flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 mb-16 lg:mb-20">
-              {[
-                { value: countdown.days, label: "Dias" },
-                { value: countdown.hours, label: "Horas" },
-                { value: countdown.minutes, label: "Min" },
-                { value: countdown.seconds, label: "Seg" },
-              ].map((item, i) => (
-                <div key={item.label} className="text-center">
-                  <div className="glass-card rounded-2xl w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3">
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tabular-nums">
-                      {String(item.value).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <span className="text-white/30 text-xs tracking-[0.15em] uppercase">
-                    {item.label}
+          <motion.div
+            variants={childReveal(0.38)}
+            className="flex gap-4 sm:gap-5 lg:gap-6 mb-12"
+          >
+            {[
+              { value: countdown.days, label: "Dias" },
+              { value: countdown.hours, label: "Horas" },
+              { value: countdown.minutes, label: "Min" },
+              { value: countdown.seconds, label: "Seg" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                variants={childReveal(0.38 + i * 0.08)}
+                className="text-center"
+              >
+                <div className="glass-card rounded-2xl w-18 h-18 sm:w-22 sm:h-22 lg:w-24 lg:h-24 flex items-center justify-center mb-2">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tabular-nums">
+                    {String(item.value).padStart(2, "0")}
                   </span>
-                  {i < 3 && (
-                    <span className="hidden" />
-                  )}
                 </div>
-              ))}
-            </div>
-          </BlurReveal>
+                <span className="text-white/35 text-[10px] sm:text-xs tracking-[0.15em] uppercase">
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
 
-          {/* Giant CTA */}
-          <BlurReveal delay={0.5}>
+          <motion.div variants={childReveal(0.7)}>
             <a href="#" className="btn-giant">
               Reservar minha vaga
               <ArrowRight size={20} />
             </a>
-          </BlurReveal>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
