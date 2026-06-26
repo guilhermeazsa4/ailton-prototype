@@ -26,7 +26,7 @@ export function CtaFinal() {
           {/* Glass container */}
           <div className="glass-strong rounded-3xl p-12 sm:p-16 lg:p-24">
             <BlurReveal>
-              <p className="text-cyan-accent/60 text-xs tracking-[0.4em] uppercase mb-8">
+              <p className="text-gradient-subtle text-xs tracking-[0.4em] uppercase mb-8">
                 Próximo passo
               </p>
             </BlurReveal>
@@ -34,7 +34,7 @@ export function CtaFinal() {
             <BlurReveal delay={0.15}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] mb-8">
                 Grandes transformações começam com uma{" "}
-                <span className="font-serif italic text-cyan-accent text-glow-cyan">
+                <span className="font-serif italic text-gradient">
                   decisão
                 </span>
                 .

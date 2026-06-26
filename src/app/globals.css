@@ -6,45 +6,50 @@
 
 :root {
   /* ── Cores base ── */
-  --color-bg:           #050A30;          /* fundo principal (prussian) */
-  --color-bg-light:     #060C38;          /* fundo seção alternativa */
-  --color-bg-mid:       #080E3A;          /* fundo seção intermediária */
+  --color-bg:           #111827;          /* fundo principal (navy acinzentado) */
+  --color-bg-light:     #1A2233;          /* fundo seções alternadas */
+  --color-bg-mid:       #242E42;          /* cards e áreas intermediárias */
 
   /* ── Cores de destaque (accent) ── */
-  --color-primary:      #0000FF;          /* cor principal (botões, glows) */
-  --color-primary-light:#0033FF;          /* variação clara do primary */
-  --color-primary-hover:#0055FF;          /* primary no hover */
-  --color-accent:       #00FFFF;          /* cor de destaque/accent (textos, bordas) */
+  --color-primary:      #3E5C9A;          /* botões, links, elementos principais */
+  --color-primary-light:#5874AE;          /* variação clara */
+  --color-primary-hover:#6B86BC;          /* hover dos botões */
+  --color-accent:       #3aadb5;          /* detalhes, divisores, ícones, números */
 
   /* ── Texto ── */
-  --color-text:         #ffffff;
-  --color-text-muted:   rgba(255, 255, 255, 0.55);
+  --color-text:         #F5F3EE;          /* texto principal (off-white) */
+  --color-text-secondary: #C5D5CF;        /* texto secundário */
+  --color-text-muted:   #88A098;          /* legendas e textos de apoio */
+
+  /* ── Superfícies e bordas ── */
+  --color-border:       rgba(255, 255, 255, 0.08);
+  --color-surface:      rgba(255, 255, 255, 0.03);
 
   /* ── Glass (transparências derivadas do accent) ── */
   --glass-bg:           rgba(255, 255, 255, 0.04);
   --glass-bg-hover:     rgba(255, 255, 255, 0.10);
   --glass-border:       rgba(var(--accent-rgb), 0.10);
   --glass-border-hover: rgba(var(--accent-rgb), 0.25);
-  --glass-strong-bg:    rgba(5, 10, 48, 0.7);
+  --glass-strong-bg:    rgba(17, 24, 39, 0.7);
 
   /* ── Glow (brilhos derivados das cores) ── */
   --glow-primary:       rgba(var(--primary-rgb), 0.35);
   --glow-primary-soft:  rgba(var(--primary-rgb), 0.20);
   --glow-primary-faint: rgba(var(--primary-rgb), 0.10);
-  --glow-accent:        rgba(var(--accent-rgb), 0.25);
-  --glow-accent-soft:   rgba(var(--accent-rgb), 0.15);
-  --glow-accent-faint:  rgba(var(--accent-rgb), 0.08);
+  --glow-accent:        rgba(var(--accent-rgb), 0.35);
+  --glow-accent-soft:   rgba(var(--accent-rgb), 0.25);
+  --glow-accent-faint:  rgba(var(--accent-rgb), 0.12);
 
   /* ── Degradês ── */
-  --gradient-hero:      linear-gradient(180deg, var(--color-bg) 0%, var(--color-primary) 55%, var(--color-accent) 100%);
+  --gradient-hero:      linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 50%, var(--color-primary) 100%);
   --gradient-subtle:    linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
   --gradient-section:   linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 50%, var(--color-bg) 100%);
-  --gradient-btn:       linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  --gradient-btn-hover: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-hover));
+  --gradient-btn:       linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+  --gradient-btn-hover: linear-gradient(135deg, var(--color-accent), var(--color-primary-hover));
 
   /* ── Botão giant (variações mais intensas) ── */
-  --color-btn-giant-end:      #0044FF;
-  --color-btn-giant-hover-end: #0066FF;
+  --color-btn-giant-end:      var(--color-primary-light);
+  --color-btn-giant-hover-end: var(--color-primary-hover);
 
   /* ── Seleção de texto ── */
   --selection-bg:       rgba(var(--accent-rgb), 0.22);
@@ -57,9 +62,9 @@
   --divider-color:      rgba(var(--accent-rgb), 0.2);
 
   /* ── RGB channels (para usar com rgba) ── */
-  --primary-rgb:        0, 0, 255;
-  --accent-rgb:         0, 255, 255;
-  --bg-rgb:             5, 10, 48;
+  --primary-rgb:        62, 92, 154;
+  --accent-rgb:         58, 173, 181;
+  --bg-rgb:             17, 24, 39;
 }
 
 @theme inline {
@@ -154,6 +159,29 @@ body {
   background: var(--gradient-section);
 }
 
+/* ── Text gradient utilities ── */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-reverse {
+  background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-subtle {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Button styles ── */
 
 .btn-primary {
@@ -216,7 +244,7 @@ body {
   justify-content: center;
   gap: 0.75rem;
   padding: 1.5rem 4rem;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-btn-giant-end));
+  background: linear-gradient(135deg, var(--color-accent), var(--color-btn-giant-end));
   color: var(--color-text);
   font-weight: 600;
   font-size: 1.125rem;
@@ -229,7 +257,7 @@ body {
 }
 
 .btn-giant:hover {
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-btn-giant-hover-end));
+  background: linear-gradient(135deg, var(--color-accent), var(--color-btn-giant-hover-end));
   box-shadow:
     0 0 40px var(--glow-primary),
     0 0 80px rgba(var(--primary-rgb), 0.15),

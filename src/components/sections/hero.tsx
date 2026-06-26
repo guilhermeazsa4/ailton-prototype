@@ -24,17 +24,15 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[80vh] flex items-center overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 gradient-electric-tundra" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-prussian" />
 
-      {/* Ambient glow */}
+      {/* Dramatic glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[15%] right-[20%] w-[600px] h-[600px] rounded-full bg-blue-accent/20 blur-[180px]" />
-        <div className="absolute bottom-[10%] left-[30%] w-[500px] h-[400px] rounded-full bg-cyan-accent/10 blur-[150px]" />
-        <div className="absolute top-[40%] left-[10%] w-[300px] h-[300px] rounded-full bg-blue-accent/10 blur-[120px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-blue-accent/15 blur-[200px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-cyan-accent/8 blur-[150px]" />
       </div>
 
-      {/* Noise overlay */}
       <div className="absolute inset-0 noise pointer-events-none" />
 
       {/* Content */}
@@ -45,7 +43,7 @@ export function Hero() {
         <div className="max-w-3xl">
           <motion.p
             {...blur(0.5)}
-            className="text-cyan-accent/80 text-xs sm:text-sm tracking-[0.35em] uppercase mb-8 lg:mb-10"
+            className="text-gradient-subtle text-xs sm:text-sm tracking-[0.35em] uppercase mb-8 lg:mb-10"
           >
             Autor &bull; Palestrante &bull; Mentor &bull; Consultor
           </motion.p>
@@ -55,7 +53,7 @@ export function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.08] mb-8 lg:mb-10"
           >
             Uma das principais vozes da gestão condominial{" "}
-            <span className="font-serif italic text-cyan-accent text-glow-cyan">
+            <span className="font-serif italic text-gradient">
               brasileira
             </span>
             .

@@ -50,7 +50,7 @@ export function Evento() {
       <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20">
         {/* Section label */}
         <BlurReveal>
-          <p className="text-cyan-accent text-xs tracking-[0.5em] uppercase mb-4 text-center">
+          <p className="text-gradient-subtle text-xs tracking-[0.5em] uppercase mb-4 text-center">
             O Evento
           </p>
         </BlurReveal>
@@ -74,7 +74,7 @@ export function Evento() {
           <BlurReveal delay={0.2}>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-[1.05] mb-8">
               A experiência que{" "}
-              <span className="font-serif italic text-cyan-accent text-glow-cyan">
+              <span className="font-serif italic text-gradient">
                 redefine
               </span>{" "}
               a gestão.
@@ -84,14 +84,14 @@ export function Evento() {
           <BlurReveal delay={0.3}>
             <div className="flex flex-wrap items-center justify-center gap-8 mb-14">
               <div className="flex items-center gap-3 text-white/60">
-                <Calendar size={18} className="text-cyan-accent/60" />
+                <Calendar size={18} className="text-cyan-accent/70" />
                 <span className="text-lg lg:text-xl font-light tracking-wide">
                   18 de Setembro, 2026
                 </span>
               </div>
               <div className="w-px h-6 bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-3 text-white/60">
-                <MapPin size={18} className="text-cyan-accent/60" />
+                <MapPin size={18} className="text-cyan-accent/70" />
                 <span className="text-lg lg:text-xl font-light tracking-wide">
                   São Paulo, SP
                 </span>

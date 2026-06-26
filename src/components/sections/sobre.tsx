@@ -36,7 +36,7 @@ export function Sobre() {
       <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20">
         {/* Section label */}
         <BlurReveal>
-          <p className="text-cyan-accent/60 text-xs tracking-[0.4em] uppercase mb-6">
+          <p className="text-gradient-subtle text-xs tracking-[0.4em] uppercase mb-6">
             Sobre
           </p>
         </BlurReveal>
@@ -47,7 +47,7 @@ export function Sobre() {
             <BlurReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] mb-10">
                 Conhecimento que transforma gestão em{" "}
-                <span className="font-serif italic text-cyan-accent">
+                <span className="font-serif italic text-gradient">
                   liderança
                 </span>
                 .
@@ -95,7 +95,7 @@ export function Sobre() {
               <div className="glass-card rounded-2xl p-6 lg:p-8 group hover:border-cyan-accent/20 transition-all duration-500">
                 <role.icon
                   size={24}
-                  className="text-cyan-accent/50 mb-5 group-hover:text-cyan-accent transition-colors duration-500"
+                  className="text-cyan-accent/60 mb-5 group-hover:text-cyan-accent transition-colors duration-500"
                 />
                 <h3 className="text-white font-medium text-lg mb-2">
                   {role.title}
