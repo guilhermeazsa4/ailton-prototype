@@ -5,9 +5,10 @@ import { BlurReveal } from "@/components/blur-reveal";
 
 export function Sobre() {
   return (
-    <section id="sobre" className="relative overflow-hidden pt-16 pb-0 lg:pt-20 lg:pb-0">
-      <div className="absolute inset-0 gradient-dark-subtle" />
-      <div className="absolute inset-0 noise pointer-events-none" />
+    <section id="sobre" className="premium-mist-bg relative overflow-hidden pt-16 pb-0 lg:pt-20 lg:pb-0">
+      <div className="pointer-events-none absolute inset-x-0 bottom-[-120px] h-[320px]">
+        <div className="absolute left-1/2 top-0 h-[260px] w-[860px] -translate-x-1/2 rounded-full bg-blue-accent/16 blur-[160px]" />
+      </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 sm:px-10 lg:px-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr,0.95fr] xl:gap-16">
@@ -54,7 +55,9 @@ export function Sobre() {
           </div>
 
           <BlurReveal delay={0.25} className="hidden lg:block">
-            <div className="relative -mt-40 ml-auto h-[420px] w-full max-w-[660px]">
+            <div className="relative -mt-40 ml-auto h-[220px] w-full max-w-[660px]">
+              <div className="pointer-events-none absolute right-6 top-[-500px] h-[620px] w-[520px] rounded-full bg-[#ffd86a]/18 blur-[130px]" />
+              <div className="pointer-events-none absolute right-24 top-[-360px] h-[360px] w-[320px] rounded-full bg-[#ffe89a]/12 blur-[90px]" />
               <Image
                 src="/images/ailton-sobre-fade.png"
                 alt="Ailton Tertuliano"
@@ -67,7 +70,7 @@ export function Sobre() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent to-prussian/80 backdrop-blur-sm [mask-image:linear-gradient(to_bottom,transparent,black_48%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 translate-y-12 bg-gradient-to-b from-transparent via-prussian/80 to-prussian" />
     </section>
   );
 }
