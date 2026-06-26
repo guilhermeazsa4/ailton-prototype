@@ -25,13 +25,14 @@ export function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] items-center overflow-hidden"
     >
-      {/* Background — solid, no animations */}
+      {/* Background */}
       <div className="absolute inset-0 bg-prussian" />
 
-      {/* Static subtle glow */}
+      {/* Static blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-blue-accent/15 blur-[200px]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-cyan-accent/8 blur-[150px]" />
+        <div className="absolute -top-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.12)_0%,transparent_60%)] blur-[180px]" />
+        <div className="absolute -bottom-[20%] -left-[12%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(var(--primary-rgb),0.14)_0%,transparent_60%)] blur-[200px]" />
+        <div className="absolute top-[25%] left-[20%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.07)_0%,transparent_60%)] blur-[190px]" />
       </div>
 
       <div className="absolute inset-0 noise pointer-events-none" />
@@ -40,7 +41,7 @@ export function Hero() {
         initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}
         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-        className="pointer-events-none absolute right-[clamp(3rem,7vw,9rem)] bottom-0 z-[2] hidden w-[clamp(540px,42vw,760px)] lg:block"
+        className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,800px)] lg:block"
       >
         <Image
           src="/images/ailton-hero.png"
@@ -59,7 +60,7 @@ export function Hero() {
         <div className="max-w-[760px] text-center lg:text-left">
           <motion.p
             {...blur(0.5)}
-            className="text-gradient-subtle mb-5 text-sm font-medium uppercase tracking-[0.32em] sm:text-base"
+            className="text-gradient-subtle mb-5 text-sm font-medium uppercase tracking-[0.45em] sm:text-base"
           >
             Ailton Tertuliano
           </motion.p>
@@ -73,21 +74,28 @@ export function Hero() {
               gestão condominial
             </span>
           </motion.h1>
-        </div>
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={20} className="text-white/20" />
-        </motion.div>
+          <motion.div
+            {...blur(1.0)}
+            className="mt-4"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+                <defs>
+                  <linearGradient id="arrow-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#ffe89a" />
+                    <stop offset="50%" stopColor="#efae04" />
+                    <stop offset="100%" stopColor="#c28f03" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 6L12 18M12 18L17 13M12 18L7 13" stroke="url(#arrow-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

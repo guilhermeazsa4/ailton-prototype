@@ -65,7 +65,7 @@ export function Evento() {
     >
       {/* Background image */}
       <img
-        src="/assets/arenaBannernoite.png"
+        src="/assets/BannerAilsonArena.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -96,13 +96,13 @@ export function Evento() {
             variants={childReveal(0.3)}
             className="flex flex-wrap gap-6 mb-12 justify-end"
           >
-            <div className="flex items-center gap-3 text-white/70">
+            <div className="flex items-center gap-3 text-white">
               <Calendar size={16} className="text-cyan-accent/70" />
               <span className="text-sm lg:text-base font-light tracking-wide">
                 16 de Julho, 2026
               </span>
             </div>
-            <div className="flex items-center gap-3 text-white/70">
+            <div className="flex items-center gap-3 text-white">
               <MapPin size={16} className="text-cyan-accent/70" />
               <span className="text-sm lg:text-base font-light tracking-wide">
                 Arena da Baixada — Curitiba, PR
@@ -133,7 +133,7 @@ export function Evento() {
                     </span>
                   </div>
                 </div>
-                <span className="text-white/70 text-[10px] sm:text-xs tracking-[0.15em] uppercase font-medium">
+                <span className="text-white text-[10px] sm:text-xs tracking-[0.15em] uppercase font-medium">
                   {item.label}
                 </span>
               </motion.div>
