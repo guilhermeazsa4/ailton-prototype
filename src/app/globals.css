@@ -14,7 +14,9 @@
   --color-primary:      #3E5C9A;          /* botões, links, elementos principais */
   --color-primary-light:#5874AE;          /* variação clara */
   --color-primary-hover:#6B86BC;          /* hover dos botões */
-  --color-accent:       #3aadb5;          /* detalhes, divisores, ícones, números */
+  --color-accent:       #efae04;          /* detalhes, divisores, ícones, números */
+  --color-accent-light: #f4c233;          /* variação clara do accent */
+  --color-accent-dark:  #c28f03;          /* variação escura do accent */
 
   /* ── Texto ── */
   --color-text:         #F5F3EE;          /* texto principal (off-white) */
@@ -36,20 +38,20 @@
   --glow-primary:       rgba(var(--primary-rgb), 0.35);
   --glow-primary-soft:  rgba(var(--primary-rgb), 0.20);
   --glow-primary-faint: rgba(var(--primary-rgb), 0.10);
-  --glow-accent:        rgba(var(--accent-rgb), 0.35);
-  --glow-accent-soft:   rgba(var(--accent-rgb), 0.25);
-  --glow-accent-faint:  rgba(var(--accent-rgb), 0.12);
+  --glow-accent:        rgba(var(--accent-rgb), 0.20);
+  --glow-accent-soft:   rgba(var(--accent-rgb), 0.12);
+  --glow-accent-faint:  rgba(var(--accent-rgb), 0.06);
 
   /* ── Degradês ── */
   --gradient-hero:      linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 50%, var(--color-primary) 100%);
   --gradient-subtle:    linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
   --gradient-section:   linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 50%, var(--color-bg) 100%);
-  --gradient-btn:       linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
-  --gradient-btn-hover: linear-gradient(135deg, var(--color-accent), var(--color-primary-hover));
+  --gradient-btn:       linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  --gradient-btn-hover: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
 
   /* ── Botão giant (variações mais intensas) ── */
-  --color-btn-giant-end:      var(--color-primary-light);
-  --color-btn-giant-hover-end: var(--color-primary-hover);
+  --color-btn-giant-end:      var(--color-accent-dark);
+  --color-btn-giant-hover-end: var(--color-accent);
 
   /* ── Seleção de texto ── */
   --selection-bg:       rgba(var(--accent-rgb), 0.22);
@@ -63,7 +65,7 @@
 
   /* ── RGB channels (para usar com rgba) ── */
   --primary-rgb:        62, 92, 154;
-  --accent-rgb:         58, 173, 181;
+  --accent-rgb:         239, 174, 4;
   --bg-rgb:             17, 24, 39;
 }
 
@@ -145,171 +147,6 @@ body {
   text-shadow: 0 0 40px rgba(var(--accent-rgb), 0.3);
 }
 
-/* Hero animated atmosphere */
-
-.hero-premium-bg {
-  background: var(--color-bg);
-}
-
-.hero-premium-sheen {
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    transparent 34%,
-    rgba(62, 92, 154, 0.18) 46%,
-    rgba(245, 243, 238, 0.08) 52%,
-    rgba(62, 92, 154, 0.12) 58%,
-    transparent 70%,
-    transparent 100%
-  );
-  filter: blur(18px);
-  opacity: 0.7;
-  animation: hero-sheen 6s ease-in-out infinite;
-}
-
-.hero-breath-orb {
-  filter: blur(160px);
-  opacity: 0.75;
-  transform-origin: center;
-}
-
-.hero-breath-orb-one {
-  background: rgba(62, 92, 154, 0.15);
-  animation: hero-orb-one 5.8s ease-in-out infinite alternate;
-}
-
-.hero-breath-orb-two {
-  background: rgba(58, 173, 181, 0.08);
-  animation: hero-orb-two 6.8s ease-in-out infinite alternate;
-}
-
-.hero-wave {
-  position: absolute;
-  left: -35%;
-  width: 170%;
-  border-radius: 9999px;
-  background:
-    radial-gradient(ellipse at 50% 50%, rgba(245, 243, 238, 0.12), transparent 58%),
-    linear-gradient(90deg, transparent 0%, rgba(62, 92, 154, 0.34) 26%, rgba(88, 116, 174, 0.28) 50%, rgba(62, 92, 154, 0.24) 74%, transparent 100%);
-  box-shadow:
-    0 0 54px rgba(62, 92, 154, 0.22),
-    0 0 120px rgba(62, 92, 154, 0.12);
-  filter: blur(18px);
-  mix-blend-mode: screen;
-  will-change: transform, opacity;
-}
-
-.hero-wave-one {
-  top: 9%;
-  height: 170px;
-  opacity: 0.86;
-  animation: hero-wave-one 5.2s ease-in-out infinite alternate;
-}
-
-.hero-wave-two {
-  top: 30%;
-  height: 210px;
-  background:
-    radial-gradient(ellipse at 50% 50%, rgba(245, 243, 238, 0.09), transparent 58%),
-    linear-gradient(90deg, transparent 0%, rgba(62, 92, 154, 0.22) 22%, rgba(58, 173, 181, 0.08) 48%, rgba(88, 116, 174, 0.28) 78%, transparent 100%);
-  opacity: 0.78;
-  animation: hero-wave-two 6.4s ease-in-out infinite alternate;
-}
-
-.hero-wave-three {
-  top: 52%;
-  height: 190px;
-  opacity: 0.72;
-  animation: hero-wave-three 4.8s ease-in-out infinite alternate;
-}
-
-.hero-wave-four {
-  bottom: 4%;
-  height: 230px;
-  background:
-    radial-gradient(ellipse at 50% 50%, rgba(245, 243, 238, 0.1), transparent 60%),
-    linear-gradient(90deg, transparent 0%, rgba(88, 116, 174, 0.28) 24%, rgba(62, 92, 154, 0.34) 54%, rgba(58, 173, 181, 0.08) 80%, transparent 100%);
-  opacity: 0.82;
-  animation: hero-wave-four 7.2s ease-in-out infinite alternate;
-}
-
-@keyframes hero-sheen {
-  0%, 100% {
-    transform: translateX(-34%) skewX(-10deg) scale(1);
-    opacity: 0.18;
-  }
-  50% {
-    transform: translateX(32%) skewX(-10deg) scale(1.08);
-    opacity: 0.82;
-  }
-}
-
-@keyframes hero-orb-one {
-  from {
-    transform: translate3d(0, 0, 0) scale(0.9);
-    opacity: 0.7;
-  }
-  to {
-    transform: translate3d(-120px, 58px, 0) scale(1.28);
-    opacity: 1;
-  }
-}
-
-@keyframes hero-orb-two {
-  from {
-    transform: translate3d(0, 0, 0) scale(0.92);
-    opacity: 0.55;
-  }
-  to {
-    transform: translate3d(140px, -72px, 0) scale(1.3);
-    opacity: 0.95;
-  }
-}
-
-@keyframes hero-wave-one {
-  from {
-    transform: translate3d(-16%, 18px, 0) rotate(-10deg) scaleX(0.9) scaleY(0.72);
-    opacity: 0.34;
-  }
-  to {
-    transform: translate3d(18%, -26px, 0) rotate(-2deg) scaleX(1.14) scaleY(1.18);
-    opacity: 0.95;
-  }
-}
-
-@keyframes hero-wave-two {
-  from {
-    transform: translate3d(18%, -22px, 0) rotate(9deg) scaleX(0.88) scaleY(0.82);
-    opacity: 0.28;
-  }
-  to {
-    transform: translate3d(-20%, 28px, 0) rotate(1deg) scaleX(1.2) scaleY(1.24);
-    opacity: 0.88;
-  }
-}
-
-@keyframes hero-wave-three {
-  from {
-    transform: translate3d(-20%, -18px, 0) rotate(-14deg) scaleX(0.92) scaleY(0.8);
-    opacity: 0.24;
-  }
-  to {
-    transform: translate3d(20%, 26px, 0) rotate(-5deg) scaleX(1.18) scaleY(1.22);
-    opacity: 0.84;
-  }
-}
-
-@keyframes hero-wave-four {
-  from {
-    transform: translate3d(14%, 22px, 0) rotate(12deg) scaleX(0.86) scaleY(0.74);
-    opacity: 0.26;
-  }
-  to {
-    transform: translate3d(-18%, -30px, 0) rotate(3deg) scaleX(1.22) scaleY(1.2);
-    opacity: 0.9;
-  }
-}
-
 /* ── Gradient backgrounds ── */
 
 .gradient-electric-tundra {
@@ -327,21 +164,21 @@ body {
 /* ── Text gradient utilities ── */
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-text));
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-reverse {
-  background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+  background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-subtle {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-text));
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -356,8 +193,8 @@ body {
   gap: 0.5rem;
   padding: 1rem 2.5rem;
   background: var(--gradient-btn);
-  color: var(--color-text);
-  font-weight: 500;
+  color: var(--color-bg);
+  font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: 0.02em;
   border-radius: 9999px;
@@ -410,8 +247,8 @@ body {
   gap: 0.75rem;
   padding: 1.5rem 4rem;
   background: linear-gradient(135deg, var(--color-accent), var(--color-btn-giant-end));
-  color: var(--color-text);
-  font-weight: 600;
+  color: var(--color-bg);
+  font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: 0.04em;
   border-radius: 9999px;

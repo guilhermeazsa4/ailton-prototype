@@ -25,20 +25,16 @@ export function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] items-center overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 bg-prussian" />
-      <div className="hero-premium-bg absolute inset-0 z-[1]" />
-      <div className="hero-premium-sheen absolute inset-0 z-[1]" />
+      {/* Background — solid, no animations */}
+      <div className="absolute inset-0 bg-prussian" />
 
-      <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="hero-breath-orb hero-breath-orb-one absolute top-[-18%] right-[-8%] h-[760px] w-[980px] rounded-full" />
-        <div className="hero-breath-orb hero-breath-orb-two absolute bottom-[-30%] left-[-14%] h-[560px] w-[920px] rounded-full" />
-        <div className="hero-wave hero-wave-one" />
-        <div className="hero-wave hero-wave-two" />
-        <div className="hero-wave hero-wave-three" />
-        <div className="hero-wave hero-wave-four" />
+      {/* Static subtle glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-blue-accent/15 blur-[200px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-cyan-accent/8 blur-[150px]" />
       </div>
 
-      <div className="absolute inset-0 z-[1] noise pointer-events-none" />
+      <div className="absolute inset-0 noise pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}
@@ -63,17 +59,17 @@ export function Hero() {
         <div className="max-w-[760px] text-center lg:text-left">
           <motion.p
             {...blur(0.5)}
-            className="mb-5 bg-[linear-gradient(90deg,#8a6a32_0%,#d2b26a_45%,#7a5a25_100%)] bg-clip-text text-sm font-medium uppercase tracking-[0.32em] text-transparent drop-shadow-[0_0_14px_rgba(210,178,106,0.22)] sm:text-base"
+            className="text-gradient-subtle mb-5 text-sm font-medium uppercase tracking-[0.32em] sm:text-base"
           >
             Ailton Tertuliano
           </motion.p>
 
           <motion.h1
             {...blur(0.7)}
-            className="mb-7 text-5xl font-light leading-[1.02] text-white sm:text-6xl lg:text-7xl xl:text-[5rem]"
+            className="mb-7 text-[2.7rem] font-light leading-[1.02] text-white sm:text-[3.375rem] lg:text-[4rem] xl:text-[4.5rem]"
           >
             Uma das principais vozes da{" "}
-            <span className="-ml-2 block overflow-visible bg-[linear-gradient(105deg,#765421_0%,#d7b86d_34%,#f1dc9c_52%,#9a7332_76%,#6d4c1d_100%)] bg-clip-text px-2 pb-2 font-serif text-[1.02em] font-normal italic leading-[1.02] text-transparent drop-shadow-[0_0_18px_rgba(215,184,109,0.28)]">
+            <span className="font-bold text-gradient">
               gestão condominial
             </span>
           </motion.h1>
@@ -93,7 +89,6 @@ export function Hero() {
           <ChevronDown size={20} className="text-white/20" />
         </motion.div>
       </motion.div>
-
     </section>
   );
 }

@@ -47,7 +47,7 @@ export function Sobre() {
             <BlurReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] mb-10">
                 Conhecimento que transforma gestão em{" "}
-                <span className="font-serif italic text-gradient">
+                <span className="font-bold text-gradient">
                   liderança
                 </span>
                 .
