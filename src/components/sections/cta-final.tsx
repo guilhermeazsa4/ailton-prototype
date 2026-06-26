@@ -7,24 +7,17 @@ export function CtaFinal() {
   return (
     <section
       id="contato"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="premium-mist-bg relative overflow-hidden"
     >
-      {/* Electric Tundra gradient */}
-      <div className="absolute inset-0 gradient-electric-tundra" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-prussian via-prussian/85 to-transparent" />
 
-      {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-blue-accent/20 blur-[200px]" />
-        <div className="absolute bottom-[20%] left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-accent/10 blur-[150px]" />
-        <div className="absolute bottom-[20%] right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-accent/10 blur-[150px]" />
+        <div className="absolute left-1/2 top-[-120px] h-[360px] w-[900px] -translate-x-1/2 rounded-full bg-blue-accent/14 blur-[170px]" />
       </div>
 
-      <div className="absolute inset-0 noise pointer-events-none" />
-
-      <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 w-full py-32 lg:py-48">
+      <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 py-10 sm:px-10 lg:px-20 lg:pb-28 lg:pt-12">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Glass container */}
-          <div className="glass-strong rounded-3xl p-12 sm:p-16 lg:p-24">
+          <div className="glass-cta relative overflow-hidden rounded-3xl p-10 sm:p-14 lg:p-20">
             <BlurReveal>
               <p className="text-gradient-subtle text-xs tracking-[0.4em] uppercase mb-8">
                 Próximo passo
@@ -50,11 +43,11 @@ export function CtaFinal() {
 
             <BlurReveal delay={0.35}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#evento" className="btn-giant">
+                <a href="#evento" className="btn-cta-primary">
                   Participar do próximo evento
                   <ArrowRight size={20} />
                 </a>
-                <a href="#livros" className="btn-glass">
+                <a href="#livros" className="btn-cta-glass">
                   Conhecer os livros
                 </a>
               </div>
