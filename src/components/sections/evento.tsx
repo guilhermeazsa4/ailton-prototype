@@ -127,7 +127,7 @@ export function Evento() {
                 className="text-center"
               >
                 <div className="relative group w-18 h-18 sm:w-22 sm:h-22 lg:w-24 lg:h-24 mb-2">
-                  <div className="glass-card rounded-2xl h-full flex items-center justify-center border-white/15">
+                  <div className="glass-premium rounded-2xl h-full flex items-center justify-center">
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tabular-nums" style={{ background: "linear-gradient(135deg, #f9d95a, #efae04)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
                       {String(item.value).padStart(2, "0")}
                     </span>
@@ -141,7 +141,7 @@ export function Evento() {
           </motion.div>
 
           <motion.div variants={childReveal(0.7)}>
-            <a href="#" className="btn-giant">
+            <a href="#" className="btn-gold-glass">
               Reservar minha vaga
               <ArrowRight size={20} />
             </a>
