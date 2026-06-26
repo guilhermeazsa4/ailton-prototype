@@ -8,8 +8,8 @@ import { Newsletter } from "@/components/sections/newsletter";
 export default function Home() {
   return (
     <main>
-      <Hero />
       <Evento />
+      <Hero />
       <Credibilidade />
       <Sobre />
       <CtaFinal />

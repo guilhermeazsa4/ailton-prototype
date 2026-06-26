@@ -23,19 +23,14 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden"
+      className="premium-mist-bg relative flex min-h-[100svh] items-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-prussian" />
-
-      {/* Static blobs */}
+      {/* Accent blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.12)_0%,transparent_60%)] blur-[180px]" />
-        <div className="absolute -bottom-[20%] -left-[12%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(var(--primary-rgb),0.14)_0%,transparent_60%)] blur-[200px]" />
-        <div className="absolute top-[25%] left-[20%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.07)_0%,transparent_60%)] blur-[190px]" />
+        <div className="absolute -top-[10%] -right-[5%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.10)_0%,transparent_55%)] blur-[180px]" />
+        <div className="absolute -bottom-[15%] -left-[8%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(100,180,255,0.09)_0%,transparent_55%)] blur-[200px]" />
+        <div className="absolute top-[40%] left-[30%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(var(--accent-rgb),0.06)_0%,rgba(100,180,255,0.04)_40%,transparent_60%)] blur-[170px]" />
       </div>
-
-      <div className="absolute inset-0 noise pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}

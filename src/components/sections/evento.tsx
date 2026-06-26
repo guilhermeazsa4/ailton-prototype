@@ -141,7 +141,7 @@ export function Evento() {
           </motion.div>
 
           <motion.div variants={childReveal(0.7)}>
-            <a href="#" className="btn-gold-glass">
+            <a href="#" className="btn-cta-primary">
               Reservar minha vaga
               <ArrowRight size={20} />
             </a>
