@@ -1,25 +1,19 @@
 import { Hero } from "@/components/sections/hero";
-import { Sobre } from "@/components/sections/sobre";
+import { Credibilidade } from "@/components/sections/credibilidade";
 import { Evento } from "@/components/sections/evento";
-import { LivroDestaque } from "@/components/sections/livro-destaque";
-import { Acervo } from "@/components/sections/acervo";
-import { Impacto } from "@/components/sections/impacto";
-import { Depoimentos } from "@/components/sections/depoimentos";
-import { Instagram } from "@/components/sections/instagram";
+import { Sobre } from "@/components/sections/sobre";
 import { CtaFinal } from "@/components/sections/cta-final";
+import { Newsletter } from "@/components/sections/newsletter";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Sobre />
+      <Credibilidade />
       <Evento />
-      <LivroDestaque />
-      <Acervo />
-      <Impacto />
-      <Depoimentos />
-      <Instagram />
+      <Sobre />
       <CtaFinal />
+      <Newsletter />
     </main>
   );
 }
