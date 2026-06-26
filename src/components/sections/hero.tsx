@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const blur = (delay: number) => ({
   initial: { opacity: 0, y: 30, filter: "blur(12px)" },
@@ -22,67 +23,63 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[80vh] flex items-center overflow-hidden"
+      className="relative flex min-h-[100svh] items-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-prussian" />
+      <div className="absolute inset-0 z-0 bg-prussian" />
+      <div className="hero-premium-bg absolute inset-0 z-[1]" />
+      <div className="hero-premium-sheen absolute inset-0 z-[1]" />
 
-      {/* Dramatic glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-blue-accent/15 blur-[200px]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-cyan-accent/8 blur-[150px]" />
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <div className="hero-breath-orb hero-breath-orb-one absolute top-[-18%] right-[-8%] h-[760px] w-[980px] rounded-full" />
+        <div className="hero-breath-orb hero-breath-orb-two absolute bottom-[-30%] left-[-14%] h-[560px] w-[920px] rounded-full" />
+        <div className="hero-wave hero-wave-one" />
+        <div className="hero-wave hero-wave-two" />
+        <div className="hero-wave hero-wave-three" />
+        <div className="hero-wave hero-wave-four" />
       </div>
 
-      <div className="absolute inset-0 noise pointer-events-none" />
+      <div className="absolute inset-0 z-[1] noise pointer-events-none" />
 
-      {/* Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+        className="pointer-events-none absolute right-[clamp(3rem,7vw,9rem)] bottom-0 z-[2] hidden w-[clamp(540px,42vw,760px)] lg:block"
+      >
+        <Image
+          src="/images/ailton-hero.png"
+          alt="Ailton Tertuliano"
+          width={1600}
+          height={2048}
+          priority
+          className="h-auto w-full object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
+        />
+      </motion.div>
+
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 w-full py-32 lg:py-40"
+        className="relative z-10 mx-auto w-full max-w-[1800px] px-6 pb-16 pt-28 sm:px-10 lg:px-20 lg:pb-14 lg:pt-28"
       >
-        <div className="max-w-3xl">
+        <div className="max-w-[760px] text-center lg:text-left">
           <motion.p
             {...blur(0.5)}
-            className="text-gradient-subtle text-xs sm:text-sm tracking-[0.35em] uppercase mb-8 lg:mb-10"
+            className="mb-5 bg-[linear-gradient(90deg,#8a6a32_0%,#d2b26a_45%,#7a5a25_100%)] bg-clip-text text-sm font-medium uppercase tracking-[0.32em] text-transparent drop-shadow-[0_0_14px_rgba(210,178,106,0.22)] sm:text-base"
           >
-            Autor &bull; Palestrante &bull; Mentor &bull; Consultor
+            Ailton Tertuliano
           </motion.p>
 
           <motion.h1
             {...blur(0.7)}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.08] mb-8 lg:mb-10"
+            className="mb-7 text-5xl font-light leading-[1.02] text-white sm:text-6xl lg:text-7xl xl:text-[5rem]"
           >
-            Uma das principais vozes da gestão condominial{" "}
-            <span className="font-serif italic text-gradient">
-              brasileira
+            Uma das principais vozes da{" "}
+            <span className="-ml-2 block overflow-visible bg-[linear-gradient(105deg,#765421_0%,#d7b86d_34%,#f1dc9c_52%,#9a7332_76%,#6d4c1d_100%)] bg-clip-text px-2 pb-2 font-serif text-[1.02em] font-normal italic leading-[1.02] text-transparent drop-shadow-[0_0_18px_rgba(215,184,109,0.28)]">
+              gestão condominial
             </span>
-            .
           </motion.h1>
-
-          <motion.p
-            {...blur(0.9)}
-            className="text-white/45 text-base lg:text-lg leading-relaxed mb-10 lg:mb-14 max-w-lg"
-          >
-            Transformando a gestão condominial através do conhecimento,
-            liderança e uma visão que inspira milhares de profissionais.
-          </motion.p>
-
-          <motion.div
-            {...blur(1.1)}
-            className="flex flex-wrap gap-4"
-          >
-            <a href="#evento" className="btn-primary">
-              Ver próximo evento
-              <ArrowRight size={16} />
-            </a>
-            <a href="#sobre" className="btn-glass">
-              Conheça Ailton
-            </a>
-          </motion.div>
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -96,6 +93,7 @@ export function Hero() {
           <ChevronDown size={20} className="text-white/20" />
         </motion.div>
       </motion.div>
+
     </section>
   );
 }
