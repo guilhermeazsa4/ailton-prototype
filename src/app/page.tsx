@@ -8,7 +8,7 @@ import { siteUrl, siteName } from "@/lib/site";
 
 const title = "Ailton Tertuliano | Autor, Palestrante & Mentor";
 const description =
-  "Uma das principais vozes da gestão condominial brasileira. Autor best-seller, palestrante e mentor de milhares de profissionais.";
+  "Autor best-seller, palestrante e mentor de síndicos e gestores condominiais. Conheça o trabalho de Ailton Tertuliano em liderança, gestão de conflitos e administração condominial em todo o Brasil.";
 
 export const metadata: Metadata = {
   title,

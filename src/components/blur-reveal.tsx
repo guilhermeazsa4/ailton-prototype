@@ -20,12 +20,8 @@ export function BlurReveal({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-      animate={
-        isInView
-          ? { opacity: 1, y: 0, filter: "blur(0px)" }
-          : { opacity: 0, y: 40, filter: "blur(10px)" }
-      }
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
     >

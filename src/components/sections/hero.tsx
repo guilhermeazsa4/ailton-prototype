@@ -6,8 +6,8 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const blur = (delay: number) => ({
-  initial: { opacity: 0, y: 30, filter: "blur(12px)" },
-  animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
   transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
 });
 
@@ -33,17 +33,16 @@ export function Hero() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}
-        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, x: 70 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
         className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,950px)] lg:block"
       >
         <Image
           src="/images/ailton-hero.webp"
-          alt="Ailton Tertuliano"
+          alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
           width={1800}
           height={1800}
-          priority
           sizes="(min-width: 1024px) 950px, 0px"
           className="h-auto w-full object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
@@ -71,9 +70,16 @@ export function Hero() {
             </span>
           </motion.h1>
 
+          <motion.p
+            {...blur(0.85)}
+            className="mx-auto max-w-xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:mx-0"
+          >
+            Autor, palestrante e mentor de síndicos e gestores condominiais em todo o Brasil.
+          </motion.p>
+
           <motion.div
             {...blur(1.0)}
-            className="mt-4 flex justify-center lg:justify-start"
+            className="mt-6 flex justify-center lg:justify-start"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
@@ -96,14 +102,14 @@ export function Hero() {
         {/* Foto empurrada pro fundo, com respiro mínimo garantido — mobile/tablet */}
         <div className="mt-auto pt-14 lg:hidden">
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
             className="pointer-events-none mx-auto w-[88vw] max-w-[460px]"
           >
             <Image
               src="/images/ailton-hero.webp"
-              alt="Ailton Tertuliano"
+              alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
               width={1800}
               height={1800}
               sizes="(min-width: 1024px) 0px, 88vw"

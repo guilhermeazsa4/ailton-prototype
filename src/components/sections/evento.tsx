@@ -32,11 +32,10 @@ function useCountdown(targetDate: Date) {
 const eventDate = new Date("2026-07-16T09:00:00");
 
 const sectionReveal = {
-  hidden: { opacity: 0, y: 80, filter: "blur(12px)" },
+  hidden: { opacity: 0, y: 80 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   },
 };
@@ -95,6 +94,13 @@ export function Evento() {
           >
             O evento de lançamento<br className="hidden sm:inline lg:hidden" /> que <span className="font-bold text-gradient">mudará o jogo</span>.
           </motion.h2>
+
+          <motion.p
+            variants={childReveal(0.25)}
+            className="mx-auto mb-8 max-w-xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:ml-auto lg:mr-0"
+          >
+            O maior evento de gestão condominial do Paraná — palestra, mentoria e networking com Ailton Tertuliano ao vivo em Curitiba.
+          </motion.p>
 
           <motion.div
             variants={childReveal(0.3)}
@@ -187,7 +193,7 @@ export function Evento() {
         >
           <Image
             src="/assets/BannerAilsonArena.webp"
-            alt="Ailton Tertuliano"
+            alt="Ailton Tertuliano no evento de gestão condominial em Curitiba"
             fill
             sizes="(min-width: 1024px) 0px, 100vw"
             className="object-cover object-[10%_center]"

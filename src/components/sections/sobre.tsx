@@ -38,17 +38,20 @@ export function Sobre() {
                   os desafios de liderar comunidades.
                 </p>
                 <p>
-                  Como autor, palestrante, mentor e consultor, tem dedicado sua
-                  trajetória a formar profissionais mais preparados para tomar
-                  decisões, lidar com conflitos, conduzir equipes e elevar o
-                  padrão de gestão em condomínios e administradoras.
+                  Como autor, palestrante e mentor de síndicos e gestores
+                  condominiais, tem dedicado sua trajetória a formar
+                  profissionais mais preparados para tomar decisões, lidar com
+                  conflitos, conduzir equipes e elevar o padrão de gestão em
+                  condomínios e administradoras. Suas palestras corporativas e
+                  mentorias individuais já impactaram milhares de profissionais
+                  em todo o país.
                 </p>
                 <p>
                   Sua missão é traduzir experiência em orientação prática,
                   ajudando síndicos, gestores e líderes a enxergarem a gestão
                   não apenas como uma função operacional, mas como uma
                   responsabilidade que envolve pessoas, patrimônio, ética e
-                  visão de futuro.
+                  visão de futuro — a essência da liderança condominial.
                 </p>
               </div>
             </BlurReveal>

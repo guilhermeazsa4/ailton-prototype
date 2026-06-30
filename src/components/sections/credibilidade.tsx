@@ -62,10 +62,10 @@ const partners = [
 ];
 
 const stats = [
-  { value: 8, suffix: "", label: "Livros publicados", desktopOnly: false },
-  { value: 300, suffix: "+", label: "Palestras realizadas", desktopOnly: false },
-  { value: 10000, suffix: "+", label: "Profissionais impactados", desktopOnly: true },
-  { value: 15, suffix: "+", label: "Anos de experiência", desktopOnly: true },
+  { value: 3, suffix: "", label: "Livros publicados", desktopOnly: false },
+  { value: 20, suffix: "+", label: "Eventos realizados", desktopOnly: false },
+  { value: 4000, suffix: "+", label: "Profissionais impactados", desktopOnly: true },
+  { value: 20, suffix: "+", label: "Anos de experiência", desktopOnly: true },
 ];
 
 function AnimatedNumber({ value, suffix, inView }: { value: number; suffix: string; inView: boolean }) {

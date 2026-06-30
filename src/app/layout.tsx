@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/footer";
 import { siteUrl, siteName } from "@/lib/site";
 import "./globals.css";
@@ -47,9 +48,14 @@ const jsonLd = {
       image: `${siteUrl}/images/ailton-hero.webp`,
       jobTitle: "Autor, Palestrante, Mentor e Consultor",
       description:
-        "Uma das principais vozes da gestão condominial brasileira. Autor best-seller, palestrante e mentor de milhares de profissionais.",
+        "Autor best-seller, palestrante e mentor de síndicos e gestores condominiais. Referência em liderança, gestão de conflitos e administração condominial no Brasil.",
       sameAs: ["https://instagram.com/ailtontertuliano"],
-      knowsAbout: "Gestão condominial",
+      knowsAbout: [
+        "Gestão condominial",
+        "Liderança condominial",
+        "Mentoria para síndicos",
+        "Administração de condomínios",
+      ],
     },
     {
       "@type": "WebSite",
@@ -58,6 +64,16 @@ const jsonLd = {
       url: siteUrl,
       inLanguage: "pt-BR",
       publisher: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${siteUrl}/#service`,
+      name: "Palestras e Mentoria em Gestão Condominial",
+      serviceType: "Palestras, mentoria e consultoria em gestão condominial",
+      description:
+        "Palestras corporativas, mentorias individuais e consultoria para síndicos, gestores e administradoras de condomínios em todo o Brasil.",
+      provider: { "@id": `${siteUrl}/#person` },
+      areaServed: "BR",
     },
   ],
 };
@@ -79,6 +95,7 @@ export default function RootLayout({
         />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
