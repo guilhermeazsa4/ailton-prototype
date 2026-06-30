@@ -62,10 +62,10 @@ const partners = [
 ];
 
 const stats = [
-  { value: 8, suffix: "", label: "Livros publicados" },
-  { value: 300, suffix: "+", label: "Palestras realizadas" },
-  { value: 10000, suffix: "+", label: "Profissionais impactados" },
-  { value: 15, suffix: "+", label: "Anos de experiência" },
+  { value: 8, suffix: "", label: "Livros publicados", desktopOnly: false },
+  { value: 300, suffix: "+", label: "Palestras realizadas", desktopOnly: false },
+  { value: 10000, suffix: "+", label: "Profissionais impactados", desktopOnly: true },
+  { value: 15, suffix: "+", label: "Anos de experiência", desktopOnly: true },
 ];
 
 function AnimatedNumber({ value, suffix, inView }: { value: number; suffix: string; inView: boolean }) {
@@ -124,10 +124,10 @@ export function Credibilidade() {
         {/* Animated numbers */}
         <div
           ref={ref}
-          className="max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16"
+          className="max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-2 gap-10 lg:grid-cols-4 lg:gap-16"
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
+            <div key={stat.label} className={`text-center ${stat.desktopOnly ? "hidden lg:block" : ""}`}>
               <p className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gradient mb-3 tabular-nums">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} inView={inView} />
               </p>

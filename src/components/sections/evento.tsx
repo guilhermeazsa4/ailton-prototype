@@ -58,29 +58,29 @@ export function Evento() {
     <motion.section
       ref={ref}
       id="evento"
-      className="relative min-h-[100svh] flex items-center overflow-hidden"
+      className="premium-mist-bg relative min-h-[100svh] flex items-center overflow-hidden"
       variants={sectionReveal}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      {/* Background image */}
+      {/* Background image — só desktop, no mobile/tablet a foto vai abaixo do conteúdo */}
       <img
         src="/assets/BannerAilsonArena.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 hidden h-full w-full object-cover lg:block lg:object-center"
       />
 
-      {/* Dark overlay — só lado esquerdo pro texto */}
-      <div className="absolute inset-0 bg-gradient-to-l from-prussian/95 via-prussian/50 via-[55%] to-transparent to-[70%]" />
+      {/* Dark overlay — só lado esquerdo pro texto (só desktop) */}
+      <div className="absolute inset-0 hidden bg-gradient-to-l from-prussian/95 via-prussian/50 via-[55%] to-transparent to-[70%] lg:block" />
 
       <div className="absolute inset-0 noise pointer-events-none" />
 
       {/* Content — left aligned */}
-      <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 w-full py-32 lg:py-40">
-        <div className="max-w-3xl ml-auto text-right">
+      <div className="relative z-10 max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 w-full pt-16 pb-0 lg:py-40">
+        <div className="max-w-3xl mx-auto text-center lg:ml-auto lg:mr-0 lg:text-right">
           <motion.p
             variants={childReveal(0.1)}
-            className="text-gradient-subtle text-xs tracking-[0.5em] uppercase mb-6"
+            className="text-gradient-subtle text-xs font-bold tracking-[0.5em] uppercase mb-6"
           >
             Novo Lançamento
           </motion.p>
@@ -89,12 +89,12 @@ export function Evento() {
             variants={childReveal(0.2)}
             className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[3.8rem] 3xl:text-[4.4rem] font-light text-white leading-[1.08] mb-8"
           >
-            O evento de lançamento que <span className="font-bold text-gradient">muda o jogo</span>.
+            O evento de lançamento<br className="hidden sm:inline lg:hidden" /> que <span className="font-bold text-gradient">mudará o jogo</span>.
           </motion.h2>
 
           <motion.div
             variants={childReveal(0.3)}
-            className="flex flex-wrap gap-6 mb-12 justify-end"
+            className="flex flex-wrap gap-6 mb-12 justify-center lg:justify-end"
           >
             <div className="flex items-center gap-3 text-white">
               <Calendar size={16} className="text-cyan-accent/70" />
@@ -113,7 +113,7 @@ export function Evento() {
           {/* Countdown */}
           <motion.div
             variants={childReveal(0.38)}
-            className="flex items-center gap-4 sm:gap-5 lg:gap-6 mb-12 justify-end"
+            className="grid grid-cols-4 gap-2 justify-items-center mb-12 sm:flex sm:items-center sm:justify-center sm:gap-5 lg:justify-end lg:gap-6"
           >
             {[
               { value: countdown.days, label: "Dias" },
@@ -126,9 +126,9 @@ export function Evento() {
                   variants={childReveal(0.38 + i * 0.08)}
                   className="text-center"
                 >
-                  <div className="relative group w-18 h-18 sm:w-22 sm:h-22 lg:w-24 lg:h-24 3xl:w-28 3xl:h-28 mb-2">
+                  <div className="relative group w-16 h-16 sm:w-22 sm:h-22 lg:w-24 lg:h-24 3xl:w-28 3xl:h-28 mb-2">
                     <div className="glass-premium rounded-2xl h-full flex items-center justify-center">
-                      <span className="text-[1.65rem] sm:text-[2rem] lg:text-[2.4rem] font-black tabular-nums" style={{ background: "linear-gradient(135deg, #f9d95a, #efae04)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+                      <span className="text-[1.45rem] sm:text-[2rem] lg:text-[2.4rem] font-black tabular-nums" style={{ background: "linear-gradient(135deg, #f9d95a, #efae04)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
                         {String(item.value).padStart(2, "0")}
                       </span>
                     </div>
@@ -139,7 +139,7 @@ export function Evento() {
                 </motion.div>
 
                 {i < arr.length - 1 && (
-                  <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-accent -mt-6">
+                  <span className="hidden text-2xl sm:inline-block sm:text-3xl lg:text-4xl font-semibold text-cyan-accent -mt-6">
                     :
                   </span>
                 )}
@@ -153,7 +153,40 @@ export function Evento() {
               <ArrowRight size={20} />
             </a>
           </motion.div>
+
+          <motion.div
+            variants={childReveal(0.8)}
+            className="mt-6 flex justify-center lg:hidden"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+                <defs>
+                  <linearGradient id="arrow-grad-evento" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#ffe89a" />
+                    <stop offset="50%" stopColor="#efae04" />
+                    <stop offset="100%" stopColor="#c28f03" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 6L12 18M12 18L17 13M12 18L7 13" stroke="url(#arrow-grad-evento)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </motion.div>
+          </motion.div>
         </div>
+
+        {/* Foto abaixo do conteúdo — mobile e tablet */}
+        <motion.div
+          variants={childReveal(0.8)}
+          className="relative -mx-6 sm:-mx-10 mt-12 h-[70vh] overflow-hidden lg:hidden"
+        >
+          <img
+            src="/assets/BannerAilsonArena.png"
+            alt="Ailton Tertuliano"
+            className="h-full w-full object-cover object-[10%_center]"
+          />
+        </motion.div>
       </div>
     </motion.section>
   );

@@ -24,13 +24,13 @@ export function CtaFinal() {
               className="absolute inset-0 -z-10 h-full w-full object-cover opacity-25"
             />
             <BlurReveal>
-              <p className="text-gradient-subtle text-xs font-semibold tracking-[0.4em] uppercase mb-8">
+              <p className="text-gradient-subtle text-sm font-semibold tracking-[0.4em] uppercase mb-8 lg:text-xs">
                 Próximo passo
               </p>
             </BlurReveal>
 
             <BlurReveal delay={0.15}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] mb-8">
+              <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.1] mb-8">
                 Grandes transformações começam com uma{" "}
                 <span className="font-bold text-gradient">
                   decisão

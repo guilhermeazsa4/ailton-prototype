@@ -5,14 +5,14 @@ import { BlurReveal } from "@/components/blur-reveal";
 
 export function Sobre() {
   return (
-    <section id="sobre" className="premium-mist-bg relative overflow-hidden pt-16 pb-0 lg:pt-20 lg:pb-0">
+    <section id="sobre" className="premium-mist-bg relative overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-0">
       <div className="pointer-events-none absolute inset-x-0 bottom-[-120px] h-[320px]">
         <div className="absolute left-1/2 top-0 h-[260px] w-[860px] -translate-x-1/2 rounded-full bg-blue-accent/16 blur-[160px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 sm:px-10 lg:px-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr,0.95fr] xl:gap-16">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl sm:mx-auto sm:text-center lg:mx-0 lg:text-left">
             <BlurReveal>
               <p className="text-gradient-subtle mb-6 text-xs uppercase tracking-[0.4em]">
                 Sobre
@@ -20,7 +20,7 @@ export function Sobre() {
             </BlurReveal>
 
             <BlurReveal delay={0.1}>
-              <h2 className="mb-7 max-w-3xl text-3xl font-light leading-[1.08] text-white sm:text-4xl lg:text-5xl xl:text-6xl">
+              <h2 className="mb-7 max-w-3xl text-[2.1rem] font-light leading-[1.1] text-white sm:mb-16 sm:text-[2.7rem] sm:leading-[1.08] lg:text-5xl xl:text-6xl">
                 Conhecimento que transforma gestão em{" "}
                 <span className="font-bold text-gradient">
                   liderança
@@ -30,7 +30,7 @@ export function Sobre() {
             </BlurReveal>
 
             <BlurReveal delay={0.2}>
-              <div className="max-w-2xl space-y-5 text-base leading-[1.75] text-white/48 lg:text-lg text-left">
+              <div className="max-w-2xl space-y-5 text-[1.3rem] leading-[1.45] text-white/80 sm:mx-auto sm:text-[1.68rem] sm:leading-[1.4] lg:mx-0 lg:text-lg lg:leading-[1.75] text-justify lg:text-left">
                 <p>
                   Ailton Tertuliano é uma das vozes mais atuantes no universo
                   da gestão condominial, reconhecido por unir conhecimento
@@ -68,6 +68,19 @@ export function Sobre() {
             </div>
           </BlurReveal>
         </div>
+
+        {/* Foto abaixo do texto — mobile/tablet */}
+        <BlurReveal delay={0.25} className="mt-10 lg:hidden">
+          <div className="relative mx-auto w-full max-w-[360px]">
+            <Image
+              src="/images/ailton-sobre-fade.png"
+              alt="Ailton Tertuliano"
+              width={1280}
+              height={1792}
+              className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
+            />
+          </div>
+        </BlurReveal>
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 translate-y-12 bg-gradient-to-b from-transparent via-prussian/80 to-prussian" />
