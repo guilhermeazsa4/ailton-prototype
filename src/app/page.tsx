@@ -3,7 +3,6 @@ import { Credibilidade } from "@/components/sections/credibilidade";
 import { Evento } from "@/components/sections/evento";
 import { Sobre } from "@/components/sections/sobre";
 import { CtaFinal } from "@/components/sections/cta-final";
-import { Newsletter } from "@/components/sections/newsletter";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <Credibilidade />
       <Sobre />
       <CtaFinal />
-      <Newsletter />
     </main>
   );
 }

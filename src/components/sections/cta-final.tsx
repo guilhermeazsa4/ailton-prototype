@@ -16,10 +16,15 @@ export function CtaFinal() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 py-10 sm:px-10 lg:px-20 lg:pb-28 lg:pt-12">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="glass-cta relative overflow-hidden rounded-3xl p-10 sm:p-14 lg:p-20">
+            <img
+              src="/assets/BannerEvento.png"
+              alt=""
+              className="absolute inset-0 -z-10 h-full w-full object-cover opacity-25"
+            />
             <BlurReveal>
-              <p className="text-gradient-subtle text-xs tracking-[0.4em] uppercase mb-8">
+              <p className="text-gradient-subtle text-xs font-semibold tracking-[0.4em] uppercase mb-8">
                 Próximo passo
               </p>
             </BlurReveal>
@@ -34,21 +39,11 @@ export function CtaFinal() {
               </h2>
             </BlurReveal>
 
-            <BlurReveal delay={0.25}>
-              <p className="text-white/40 text-base lg:text-lg mb-12 lg:mb-16 max-w-xl mx-auto leading-relaxed">
-                Junte-se a milhares de profissionais que já elevaram o padrão da
-                gestão condominial.
-              </p>
-            </BlurReveal>
-
             <BlurReveal delay={0.35}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#evento" className="btn-cta-primary">
                   Participar do próximo evento
                   <ArrowRight size={20} />
-                </a>
-                <a href="#livros" className="btn-cta-glass">
-                  Conhecer os livros
                 </a>
               </div>
             </BlurReveal>

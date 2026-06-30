@@ -101,13 +101,13 @@ export function Credibilidade() {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden border-y border-white/[0.04]">
+    <section className="relative py-10 lg:py-14 overflow-hidden border-y border-white/[0.04]">
       <div className="absolute inset-0 bg-[var(--color-bg-light)]" />
       <div className="absolute inset-0 noise pointer-events-none" />
 
       <div className="relative z-10">
         {/* Scrolling logos */}
-        <div className="mb-16 lg:mb-20 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="mb-8 lg:mb-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex w-max animate-marquee items-center">
             {[...partners, ...partners].map((p, i) => (
               <div

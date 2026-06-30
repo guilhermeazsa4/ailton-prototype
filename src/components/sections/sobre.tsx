@@ -30,7 +30,7 @@ export function Sobre() {
             </BlurReveal>
 
             <BlurReveal delay={0.2}>
-              <div className="max-w-2xl space-y-5 text-base leading-[1.75] text-white/48 lg:text-lg">
+              <div className="max-w-2xl space-y-5 text-base leading-[1.75] text-white/48 lg:text-lg text-left">
                 <p>
                   Ailton Tertuliano é uma das vozes mais atuantes no universo
                   da gestão condominial, reconhecido por unir conhecimento

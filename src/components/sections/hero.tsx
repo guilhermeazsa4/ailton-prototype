@@ -36,13 +36,13 @@ export function Hero() {
         initial={{ opacity: 0, x: 70, filter: "blur(16px)" }}
         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-        className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,800px)] lg:block"
+        className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,950px)] lg:block"
       >
         <Image
           src="/images/ailton-hero.png"
           alt="Ailton Tertuliano"
-          width={1600}
-          height={2048}
+          width={3000}
+          height={3000}
           priority
           className="h-auto w-full object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
@@ -62,7 +62,7 @@ export function Hero() {
 
           <motion.h1
             {...blur(0.7)}
-            className="mb-7 text-[2.7rem] font-light leading-[1.02] text-white sm:text-[3.375rem] lg:text-[4rem] xl:text-[4.5rem]"
+            className="mb-7 text-[2.7rem] font-light leading-[1.02] text-white sm:text-[3.375rem] lg:text-[4rem] xl:text-[4.5rem] 3xl:text-[5.25rem]"
           >
             Uma das principais vozes da{" "}
             <span className="font-bold text-gradient">

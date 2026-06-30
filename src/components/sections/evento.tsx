@@ -58,7 +58,7 @@ export function Evento() {
     <motion.section
       ref={ref}
       id="evento"
-      className="relative min-h-[85vh] flex items-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-center overflow-hidden"
       variants={sectionReveal}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
@@ -87,7 +87,7 @@ export function Evento() {
 
           <motion.h2
             variants={childReveal(0.2)}
-            className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[3.8rem] font-light text-white leading-[1.08] mb-8"
+            className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[3.8rem] 3xl:text-[4.4rem] font-light text-white leading-[1.08] mb-8"
           >
             O evento de lançamento que <span className="font-bold text-gradient">muda o jogo</span>.
           </motion.h2>
@@ -113,29 +113,36 @@ export function Evento() {
           {/* Countdown */}
           <motion.div
             variants={childReveal(0.38)}
-            className="flex gap-4 sm:gap-5 lg:gap-6 mb-12 justify-end"
+            className="flex items-center gap-4 sm:gap-5 lg:gap-6 mb-12 justify-end"
           >
             {[
               { value: countdown.days, label: "Dias" },
               { value: countdown.hours, label: "Horas" },
               { value: countdown.minutes, label: "Min" },
               { value: countdown.seconds, label: "Seg" },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                variants={childReveal(0.38 + i * 0.08)}
-                className="text-center"
-              >
-                <div className="relative group w-18 h-18 sm:w-22 sm:h-22 lg:w-24 lg:h-24 mb-2">
-                  <div className="glass-premium rounded-2xl h-full flex items-center justify-center">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tabular-nums" style={{ background: "linear-gradient(135deg, #f9d95a, #efae04)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
-                      {String(item.value).padStart(2, "0")}
-                    </span>
+            ].map((item, i, arr) => (
+              <motion.div key={item.label} className="contents">
+                <motion.div
+                  variants={childReveal(0.38 + i * 0.08)}
+                  className="text-center"
+                >
+                  <div className="relative group w-18 h-18 sm:w-22 sm:h-22 lg:w-24 lg:h-24 3xl:w-28 3xl:h-28 mb-2">
+                    <div className="glass-premium rounded-2xl h-full flex items-center justify-center">
+                      <span className="text-[1.65rem] sm:text-[2rem] lg:text-[2.4rem] font-black tabular-nums" style={{ background: "linear-gradient(135deg, #f9d95a, #efae04)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+                        {String(item.value).padStart(2, "0")}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span className="text-white text-[10px] sm:text-xs tracking-[0.15em] uppercase font-medium">
-                  {item.label}
-                </span>
+                  <span className="text-white text-[10px] sm:text-xs tracking-[0.15em] uppercase font-medium">
+                    {item.label}
+                  </span>
+                </motion.div>
+
+                {i < arr.length - 1 && (
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-accent -mt-6">
+                    :
+                  </span>
+                )}
               </motion.div>
             ))}
           </motion.div>
