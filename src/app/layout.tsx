@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteUrl, siteName } from "@/lib/site";
 import "./globals.css";
 
@@ -93,8 +94,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
-        <Footer />
+        <SmoothScroll>
+          {children}
+          <Footer />
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>
