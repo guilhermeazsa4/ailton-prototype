@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import Image from "next/image";
 
 function useCountdown(targetDate: Date) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -64,10 +65,13 @@ export function Evento() {
       animate={inView ? "visible" : "hidden"}
     >
       {/* Background image — só desktop, no mobile/tablet a foto vai abaixo do conteúdo */}
-      <img
-        src="/assets/BannerAilsonArena.png"
+      <Image
+        src="/assets/BannerAilsonArena.webp"
         alt=""
-        className="absolute inset-0 hidden h-full w-full object-cover lg:block lg:object-center"
+        fill
+        priority
+        sizes="(min-width: 1024px) 100vw, 0px"
+        className="hidden object-cover object-center lg:block"
       />
 
       {/* Dark overlay — só lado esquerdo pro texto (só desktop) */}
@@ -97,13 +101,13 @@ export function Evento() {
             className="flex flex-wrap gap-6 mb-12 justify-center lg:justify-end"
           >
             <div className="flex items-center gap-3 text-white">
-              <Calendar size={16} className="text-cyan-accent/70" />
+              <Calendar size={16} aria-hidden="true" className="text-cyan-accent/70" />
               <span className="text-sm lg:text-base font-light tracking-wide">
                 16 de Julho, 2026
               </span>
             </div>
             <div className="flex items-center gap-3 text-white">
-              <MapPin size={16} className="text-cyan-accent/70" />
+              <MapPin size={16} aria-hidden="true" className="text-cyan-accent/70" />
               <span className="text-sm lg:text-base font-light tracking-wide">
                 Arena da Baixada — Curitiba, PR
               </span>
@@ -150,7 +154,7 @@ export function Evento() {
           <motion.div variants={childReveal(0.7)}>
             <a href="#" className="btn-cta-primary">
               Reservar minha vaga
-              <ArrowRight size={20} />
+              <ArrowRight size={20} aria-hidden="true" />
             </a>
           </motion.div>
 
@@ -162,7 +166,7 @@ export function Evento() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
                 <defs>
                   <linearGradient id="arrow-grad-evento" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#ffe89a" />
@@ -181,10 +185,12 @@ export function Evento() {
           variants={childReveal(0.8)}
           className="relative -mx-6 sm:-mx-10 mt-12 h-[70vh] overflow-hidden lg:hidden"
         >
-          <img
-            src="/assets/BannerAilsonArena.png"
+          <Image
+            src="/assets/BannerAilsonArena.webp"
             alt="Ailton Tertuliano"
-            className="h-full w-full object-cover object-[10%_center]"
+            fill
+            sizes="(min-width: 1024px) 0px, 100vw"
+            className="object-cover object-[10%_center]"
           />
         </motion.div>
       </div>

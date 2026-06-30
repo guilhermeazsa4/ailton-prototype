@@ -107,11 +107,17 @@ export function Credibilidade() {
 
       <div className="relative z-10">
         {/* Scrolling logos */}
-        <div className="mb-8 lg:mb-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div
+          className="mb-8 lg:mb-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+          aria-label="Empresas e organizações parceiras"
+        >
           <div className="flex w-max animate-marquee items-center">
             {[...partners, ...partners].map((p, i) => (
               <div
                 key={i}
+                role={i < partners.length ? "img" : undefined}
+                aria-label={i < partners.length ? `Logo ${p.name}` : undefined}
+                aria-hidden={i >= partners.length ? "true" : undefined}
                 className="shrink-0 opacity-60 hover:opacity-90 transition-opacity duration-500 mx-8 lg:mx-12"
                 style={{ width: p.width }}
               >

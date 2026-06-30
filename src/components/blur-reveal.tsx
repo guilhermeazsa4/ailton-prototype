@@ -7,13 +7,15 @@ export function BlurReveal({
   children,
   delay = 0,
   className = "",
+  margin = "-80px",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  margin?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: margin as any });
 
   return (
     <motion.div

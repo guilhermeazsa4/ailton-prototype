@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { BlurReveal } from "@/components/blur-reveal";
 
 export function CtaFinal() {
@@ -18,10 +19,12 @@ export function CtaFinal() {
       <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 py-10 sm:px-10 lg:px-20 lg:pb-28 lg:pt-12">
         <div className="max-w-6xl mx-auto text-center">
           <div className="glass-cta relative overflow-hidden rounded-3xl p-10 sm:p-14 lg:p-20">
-            <img
-              src="/assets/BannerEvento.png"
+            <Image
+              src="/assets/BannerEvento.webp"
               alt=""
-              className="absolute inset-0 -z-10 h-full w-full object-cover opacity-25"
+              fill
+              sizes="100vw"
+              className="-z-10 object-cover opacity-25"
             />
             <BlurReveal>
               <p className="text-gradient-subtle text-sm font-semibold tracking-[0.4em] uppercase mb-8 lg:text-xs">
@@ -43,7 +46,7 @@ export function CtaFinal() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#evento" className="btn-cta-primary">
                   Participar do próximo evento
-                  <ArrowRight size={20} />
+                  <ArrowRight size={20} aria-hidden="true" />
                 </a>
               </div>
             </BlurReveal>

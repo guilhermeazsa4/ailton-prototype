@@ -39,11 +39,12 @@ export function Hero() {
         className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,950px)] lg:block"
       >
         <Image
-          src="/images/ailton-hero.png"
+          src="/images/ailton-hero.webp"
           alt="Ailton Tertuliano"
-          width={3000}
-          height={3000}
+          width={1800}
+          height={1800}
           priority
+          sizes="(min-width: 1024px) 950px, 0px"
           className="h-auto w-full object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
       </motion.div>
@@ -78,7 +79,7 @@ export function Hero() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="w-11 h-11" style={{ filter: "drop-shadow(0 0 12px rgba(239,174,4,0.3))" }}>
                 <defs>
                   <linearGradient id="arrow-grad" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#ffe89a" />
@@ -101,10 +102,11 @@ export function Hero() {
             className="pointer-events-none mx-auto w-[88vw] max-w-[460px]"
           >
             <Image
-              src="/images/ailton-hero.png"
+              src="/images/ailton-hero.webp"
               alt="Ailton Tertuliano"
-              width={3000}
-              height={3000}
+              width={1800}
+              height={1800}
+              sizes="(min-width: 1024px) 0px, 88vw"
               className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />
           </motion.div>

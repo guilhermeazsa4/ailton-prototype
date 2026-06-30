@@ -54,15 +54,16 @@ export function Sobre() {
             </BlurReveal>
           </div>
 
-          <BlurReveal delay={0.25} className="hidden lg:block">
+          <BlurReveal delay={0.25} className="hidden lg:block" margin="0px 0px 700px 0px">
             <div className="relative -mt-40 ml-auto h-[220px] w-full max-w-[660px]">
               <div className="pointer-events-none absolute right-6 top-[-500px] h-[620px] w-[520px] rounded-full bg-[#ffd86a]/18 blur-[130px]" />
               <div className="pointer-events-none absolute right-24 top-[-360px] h-[360px] w-[320px] rounded-full bg-[#ffe89a]/12 blur-[90px]" />
               <Image
-                src="/images/ailton-sobre-fade.png"
+                src="/images/ailton-sobre-fade.webp"
                 alt="Ailton Tertuliano"
-                width={1280}
-                height={1792}
+                width={1100}
+                height={1650}
+                sizes="(min-width: 1024px) 507px, 0px"
                 className="absolute right-0 top-[-560px] z-10 h-auto max-h-[760px] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.42)]"
               />
             </div>
@@ -70,13 +71,14 @@ export function Sobre() {
         </div>
 
         {/* Foto abaixo do texto — mobile/tablet */}
-        <BlurReveal delay={0.25} className="mt-10 lg:hidden">
+        <BlurReveal delay={0.25} className="mt-10 lg:hidden" margin="0px 0px 200px 0px">
           <div className="relative mx-auto w-full max-w-[360px]">
             <Image
-              src="/images/ailton-sobre-fade.png"
+              src="/images/ailton-sobre-fade.webp"
               alt="Ailton Tertuliano"
-              width={1280}
-              height={1792}
+              width={1100}
+              height={1650}
+              sizes="(min-width: 1024px) 0px, 360px"
               className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />
           </div>
