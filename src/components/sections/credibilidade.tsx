@@ -6,57 +6,57 @@ import { useInView } from "framer-motion";
 const partners = [
   { name: "SECOVI", width: 130, render: (
     <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="4" width="8" height="28" rx="2" fill="#ffffff" opacity="0.7"/>
-      <text x="16" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="800" letterSpacing="4">SECOVI</text>
+      <rect x="0" y="4" width="8" height="28" rx="2" fill="currentColor" opacity="0.7"/>
+      <text x="16" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="800" letterSpacing="4">SECOVI</text>
     </svg>
   )},
   { name: "AABIC", width: 110, render: (
     <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="5">AABIC</text>
+      <text x="0" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="5">AABIC</text>
     </svg>
   )},
   { name: "SíndicoNet", width: 150, render: (
     <svg viewBox="0 0 150 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="700">Síndico</text>
-      <text x="80" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="300">Net</text>
+      <text x="0" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="700">Síndico</text>
+      <text x="80" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="300">Net</text>
     </svg>
   )},
   { name: "ABADI", width: 110, render: (
     <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="6">ABADI</text>
+      <text x="0" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="6">ABADI</text>
     </svg>
   )},
   { name: "Graiche", width: 120, render: (
     <svg viewBox="0 0 120 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="28" fill="#ffffff" fontFamily="var(--font-cormorant)" fontSize="30" fontWeight="600" fontStyle="italic">Graiche</text>
+      <text x="0" y="28" fill="currentColor" fontFamily="var(--font-cormorant)" fontSize="30" fontWeight="600" fontStyle="italic">Graiche</text>
     </svg>
   )},
   { name: "CIPA", width: 100, render: (
     <svg viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="14" cy="18" r="12" stroke="#ffffff" strokeWidth="2.5" fill="none" opacity="0.6"/>
-      <text x="32" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="3">CIPA</text>
+      <circle cx="14" cy="18" r="12" stroke="currentColor" strokeWidth="2.5" fill="none" opacity="0.6"/>
+      <text x="32" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="26" fontWeight="800" letterSpacing="3">CIPA</text>
     </svg>
   )},
   { name: "APSA", width: 100, render: (
     <svg viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="28" fontWeight="800" letterSpacing="6">APSA</text>
+      <text x="0" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="28" fontWeight="800" letterSpacing="6">APSA</text>
     </svg>
   )},
   { name: "Lello", width: 90, render: (
     <svg viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="28" fill="#ffffff" fontFamily="var(--font-cormorant)" fontSize="32" fontWeight="500" letterSpacing="2">Lello</text>
+      <text x="0" y="28" fill="currentColor" fontFamily="var(--font-cormorant)" fontSize="32" fontWeight="500" letterSpacing="2">Lello</text>
     </svg>
   )},
   { name: "SIPCES", width: 120, render: (
     <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="8" width="4" height="20" rx="1" fill="#ffffff" opacity="0.5"/>
-      <text x="10" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="700" letterSpacing="5">SIPCES</text>
+      <rect x="0" y="8" width="4" height="20" rx="1" fill="currentColor" opacity="0.5"/>
+      <text x="10" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="24" fontWeight="700" letterSpacing="5">SIPCES</text>
     </svg>
   )},
   { name: "CondoSC", width: 130, render: (
     <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="600">Condo</text>
-      <text x="66" y="27" fill="#ffffff" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="800">SC</text>
+      <text x="0" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="600">Condo</text>
+      <text x="66" y="27" fill="currentColor" fontFamily="var(--font-jakarta)" fontSize="22" fontWeight="800">SC</text>
     </svg>
   )},
 ];
@@ -101,8 +101,8 @@ export function Credibilidade() {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section className="relative py-10 lg:py-14 overflow-hidden border-y border-white/[0.04]">
-      <div className="absolute inset-0 bg-[var(--color-bg-light)]" />
+    <section className="relative py-10 lg:py-14 overflow-hidden border-y border-black/10 text-black">
+      <div className="absolute inset-0 bg-cyan-accent" />
       <div className="absolute inset-0 noise pointer-events-none" />
 
       <div className="relative z-10">
@@ -118,7 +118,7 @@ export function Credibilidade() {
                 role={i < partners.length ? "img" : undefined}
                 aria-label={i < partners.length ? `Logo ${p.name}` : undefined}
                 aria-hidden={i >= partners.length ? "true" : undefined}
-                className="shrink-0 opacity-60 hover:opacity-90 transition-opacity duration-500 mx-8 lg:mx-12"
+                className="shrink-0 mx-8 lg:mx-12"
                 style={{ width: p.width }}
               >
                 {p.render}
@@ -134,10 +134,10 @@ export function Credibilidade() {
         >
           {stats.map((stat) => (
             <div key={stat.label} className={`text-center ${stat.desktopOnly ? "hidden lg:block" : ""}`}>
-              <p className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gradient mb-3 tabular-nums">
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-black mb-3 tabular-nums">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} inView={inView} />
               </p>
-              <p className="text-white/50 text-sm sm:text-base tracking-[0.08em] uppercase">
+              <p className="text-black text-sm sm:text-base tracking-[0.08em] uppercase">
                 {stat.label}
               </p>
             </div>
