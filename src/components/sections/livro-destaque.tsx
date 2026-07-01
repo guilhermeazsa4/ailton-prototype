@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { BlurReveal } from "@/components/blur-reveal";
 
-const BG_SRC = "/images/BannerLaunch.webp";
+const BG_SRC = "/images/BannerLaunch2.webp";
 const BG_ALT =
   "Livro Como Montar o Time dos Sonhos do Condomínio, de Ailton Tertuliano, exposto em evento de lançamento";
 
