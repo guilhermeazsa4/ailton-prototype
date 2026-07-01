@@ -36,7 +36,10 @@ export function LivroDestaque() {
 
           <BlurReveal delay={0.1}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-[1.15] mb-6">
-              Como Montar o Time dos Sonhos{" "}
+              Como Montar o
+              <br />
+              Time dos Sonhos
+              <br />
               <span className="font-bold text-gradient">do Condomínio</span>
             </h2>
           </BlurReveal>
