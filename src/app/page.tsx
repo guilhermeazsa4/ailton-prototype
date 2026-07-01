@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
 import { Credibilidade } from "@/components/sections/credibilidade";
 import { Evento } from "@/components/sections/evento";
-import { Sobre } from "@/components/sections/sobre";
+import { LivroDestaque } from "@/components/sections/livro-destaque";
 import { CtaFinal } from "@/components/sections/cta-final";
 import { siteUrl, siteName } from "@/lib/site";
 
 const title = "Ailton Tertuliano | Autor, Palestrante & Mentor";
 const description =
-  "Autor best-seller, palestrante e mentor de síndicos e gestores condominiais. Conheça o trabalho de Ailton Tertuliano em liderança, gestão de conflitos e administração condominial em todo o Brasil.";
+  "Ailton Tertuliano é autor de \"Como Montar o Time dos Sonhos do Condomínio\", palestrante e mentor de síndicos e gestores condominiais em todo o Brasil.";
 
 export const metadata: Metadata = {
   title,
@@ -54,6 +54,25 @@ const jsonLd = {
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       primaryImageOfPage: `${siteUrl}/images/og-img.jpg`,
+      mentions: { "@id": `${siteUrl}/#livro` },
+    },
+    {
+      "@type": "Book",
+      "@id": `${siteUrl}/#livro`,
+      name: "Como Montar o Time dos Sonhos do Condomínio",
+      alternateName:
+        "Um guia tático para escalar, preparar e inspirar uma equipe campeã",
+      description:
+        "Um guia tático para síndicos e gestores que querem montar equipes de alta performance no condomínio. Ailton Tertuliano mostra como selecionar, preparar e inspirar colaboradores e prestadores.",
+      author: { "@id": `${siteUrl}/#person` },
+      publisher: {
+        "@type": "Organization",
+        name: "Haus",
+      },
+      inLanguage: "pt-BR",
+      bookFormat: "https://schema.org/Paperback",
+      image: `${siteUrl}/images/CapaPng.webp`,
+      url: `${siteUrl}/#livros`,
     },
     {
       "@type": "Event",
@@ -91,7 +110,7 @@ export default function Home() {
         <Evento />
         <Hero />
         <Credibilidade />
-        <Sobre />
+        <LivroDestaque />
         <CtaFinal />
       </main>
     </>

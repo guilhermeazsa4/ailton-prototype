@@ -36,15 +36,15 @@ export function Hero() {
         initial={{ opacity: 0, x: 70 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-        className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden w-[clamp(570px,45vw,950px)] lg:block"
+        className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden lg:block"
       >
         <Image
-          src="/images/ailton-hero.webp"
+          src="/images/ailton-sobre-fade.webp"
           alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
-          width={1800}
-          height={1800}
-          sizes="(min-width: 1024px) 950px, 0px"
-          className="h-auto w-full object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
+          width={1100}
+          height={1650}
+          sizes="(min-width: 1024px) 507px, 0px"
+          className="h-auto max-h-[760px] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
       </motion.div>
 
@@ -70,12 +70,26 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             {...blur(0.85)}
-            className="mx-auto max-w-xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:mx-0"
+            className="mx-auto max-w-2xl space-y-4 text-base font-light leading-relaxed text-white sm:text-lg lg:mx-0"
           >
-            Autor, palestrante e mentor de síndicos e gestores condominiais em todo o Brasil.
-          </motion.p>
+            <p>
+              Ailton Tertuliano é uma das vozes mais atuantes no universo da
+              gestão condominial, reconhecido por unir conhecimento técnico,
+              sensibilidade humana e uma comunicação clara sobre os desafios
+              de liderar comunidades.
+            </p>
+            <p>
+              Como autor, palestrante e mentor de síndicos e gestores
+              condominiais, tem dedicado sua trajetória a formar
+              profissionais mais preparados para tomar decisões, lidar com
+              conflitos, conduzir equipes e elevar o padrão de gestão em
+              condomínios e administradoras. Suas palestras corporativas e
+              mentorias individuais já impactaram milhares de profissionais
+              em todo o país.
+            </p>
+          </motion.div>
 
           <motion.div
             {...blur(1.0)}
@@ -105,14 +119,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
-            className="pointer-events-none mx-auto w-[88vw] max-w-[460px]"
+            className="pointer-events-none mx-auto w-[70vw] max-w-[360px]"
           >
             <Image
-              src="/images/ailton-hero.webp"
+              src="/images/ailton-sobre-fade.webp"
               alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
-              width={1800}
-              height={1800}
-              sizes="(min-width: 1024px) 0px, 88vw"
+              width={1100}
+              height={1650}
+              sizes="(min-width: 1024px) 0px, 360px"
               className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />
           </motion.div>

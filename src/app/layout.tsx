@@ -46,7 +46,7 @@ const jsonLd = {
       "@id": `${siteUrl}/#person`,
       name: "Ailton Tertuliano",
       url: siteUrl,
-      image: `${siteUrl}/images/ailton-hero.webp`,
+      image: `${siteUrl}/images/ailton-sobre-fade.webp`,
       jobTitle: "Autor, Palestrante, Mentor e Consultor",
       description:
         "Autor best-seller, palestrante e mentor de síndicos e gestores condominiais. Referência em liderança, gestão de conflitos e administração condominial no Brasil.",

@@ -14,7 +14,7 @@ export function Sobre() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr,0.95fr] xl:gap-16">
           <div className="max-w-3xl sm:mx-auto sm:text-center lg:mx-0 lg:text-left">
             <BlurReveal>
-              <p className="text-gradient-subtle mb-6 text-xs uppercase tracking-[0.4em]">
+              <p className="text-gradient-subtle mb-6 text-sm font-medium uppercase tracking-[0.45em] sm:text-base">
                 Sobre
               </p>
             </BlurReveal>

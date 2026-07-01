@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import Image from "next/image";
 
 function useCountdown(targetDate: Date) {
@@ -83,7 +83,7 @@ export function Evento() {
         <div className="max-w-3xl mx-auto text-center lg:ml-auto lg:mr-0 lg:text-right">
           <motion.p
             variants={childReveal(0.1)}
-            className="text-gradient-subtle text-xs font-bold tracking-[0.5em] uppercase mb-6"
+            className="text-gradient-subtle text-sm font-medium tracking-[0.45em] uppercase mb-6 sm:text-base"
           >
             Novo Lançamento
           </motion.p>
@@ -97,7 +97,7 @@ export function Evento() {
 
           <motion.p
             variants={childReveal(0.25)}
-            className="mx-auto mb-8 max-w-xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:ml-auto lg:mr-0"
+            className="mx-auto mb-8 max-w-xl text-base font-light leading-relaxed text-white sm:text-lg lg:ml-auto lg:mr-0"
           >
             O maior evento de gestão condominial do Paraná — palestra, mentoria e networking com Ailton Tertuliano ao vivo em Curitiba.
           </motion.p>
@@ -157,10 +157,15 @@ export function Evento() {
             ))}
           </motion.div>
 
-          <motion.div variants={childReveal(0.7)}>
+          <motion.div
+            variants={childReveal(0.7)}
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-end"
+          >
             <a href="#" className="btn-cta-primary">
               Reservar minha vaga
-              <ArrowRight size={20} aria-hidden="true" />
+            </a>
+            <a href="#livros" className="btn-cta-glass">
+              Conhecer obra
             </a>
           </motion.div>
 

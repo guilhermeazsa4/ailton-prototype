@@ -27,7 +27,7 @@ export function CtaFinal() {
               className="-z-10 object-cover opacity-25"
             />
             <BlurReveal>
-              <p className="text-gradient-subtle text-sm font-semibold tracking-[0.4em] uppercase mb-8 lg:text-xs">
+              <p className="text-gradient-subtle text-sm font-medium tracking-[0.45em] uppercase mb-8 sm:text-base">
                 Próximo passo
               </p>
             </BlurReveal>
