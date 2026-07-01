@@ -108,14 +108,14 @@ export function Evento() {
           >
             <div className="flex items-center gap-3 text-white">
               <Calendar size={16} aria-hidden="true" className="text-cyan-accent/70" />
-              <span className="text-sm lg:text-base font-light tracking-wide">
+              <span className="text-sm lg:text-base font-bold tracking-wide">
                 16 de Julho, 2026
               </span>
             </div>
             <div className="flex items-center gap-3 text-white">
               <MapPin size={16} aria-hidden="true" className="text-cyan-accent/70" />
-              <span className="text-sm lg:text-base font-light tracking-wide">
-                Arena da Baixada — Curitiba, PR
+              <span className="text-sm lg:text-base font-bold tracking-wide">
+                Arena da Baixada | Curitiba, PR
               </span>
             </div>
           </motion.div>
