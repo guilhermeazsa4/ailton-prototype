@@ -99,7 +99,7 @@ export function Evento() {
             variants={childReveal(0.25)}
             className="mx-auto mb-8 max-w-xl text-base font-light leading-relaxed text-white sm:text-lg lg:ml-auto lg:mr-0"
           >
-            O maior evento de gestão condominial do Paraná — palestra, mentoria e networking com Ailton Tertuliano ao vivo em Curitiba.
+            O maior evento de gestão condominial de Curitiba. Palestra, lançamento e networking com Ailton Tertuliano ao vivo.
           </motion.p>
 
           <motion.div
@@ -161,10 +161,10 @@ export function Evento() {
             variants={childReveal(0.7)}
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-end"
           >
-            <a href="#" className="btn-cta-primary">
+            <a href="#" className="btn-cta-primary sm:order-2">
               Reservar minha vaga
             </a>
-            <a href="#livros" className="btn-cta-glass">
+            <a href="#livros" className="btn-cta-glass sm:order-1">
               Conhecer obra
             </a>
           </motion.div>

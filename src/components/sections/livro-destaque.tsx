@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { BlurReveal } from "@/components/blur-reveal";
 
-const BG_SRC = "/images/BannerLivroMesa.webp";
+const BG_SRC = "/images/BannerLaunch.webp";
 const BG_ALT =
   "Livro Como Montar o Time dos Sonhos do Condomínio, de Ailton Tertuliano, exposto em evento de lançamento";
 
@@ -46,10 +46,9 @@ export function LivroDestaque() {
               Um guia tático para síndicos e gestores que querem montar
               equipes de alta performance no condomínio. Com visão
               estratégica e linguagem direta, Ailton Tertuliano mostra como
-              selecionar, preparar e inspirar colaboradores e prestadores —
+              selecionar, preparar e inspirar colaboradores e prestadores,
               revelando que a excelência na gestão condominial começa por
-              quem está na linha de frente todos os dias. Uma obra que muda
-              a forma de enxergar pessoas.
+              quem está na linha de frente todos os dias. Obra que muda.
             </p>
           </BlurReveal>
 
