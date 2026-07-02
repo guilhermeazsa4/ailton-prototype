@@ -39,10 +39,10 @@ export function Hero() {
         className="pointer-events-none absolute right-[clamp(2.5rem,6vw,8rem)] bottom-0 z-[2] hidden lg:block"
       >
         <Image
-          src="/images/ailton-sobre-fade.webp"
+          src="/images/AiltonHero.webp"
           alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
-          width={1100}
-          height={1650}
+          width={1715}
+          height={1785}
           sizes="(min-width: 1024px) 507px, 0px"
           className="h-auto max-h-[760px] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
@@ -122,10 +122,10 @@ export function Hero() {
             className="pointer-events-none mx-auto w-[70vw] max-w-[360px]"
           >
             <Image
-              src="/images/ailton-sobre-fade.webp"
+              src="/images/AiltonHero.webp"
               alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
-              width={1100}
-              height={1650}
+              width={1715}
+              height={1785}
               sizes="(min-width: 1024px) 0px, 360px"
               className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />

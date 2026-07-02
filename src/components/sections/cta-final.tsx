@@ -44,7 +44,12 @@ export function CtaFinal() {
 
             <BlurReveal delay={0.35}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#evento" className="btn-cta-primary">
+                <a
+                  href="https://www.sympla.com.br/evento/curitiba-lancamento-do-livro-como-montar-o-time-dos-sonhos-do-condominio/3480848"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta-primary"
+                >
                   Participar do próximo evento
                   <ArrowRight size={20} aria-hidden="true" />
                 </a>

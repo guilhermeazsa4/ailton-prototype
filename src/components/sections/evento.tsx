@@ -65,7 +65,7 @@ export function Evento() {
     >
       {/* Background image — só desktop, no mobile/tablet a foto vai abaixo do conteúdo */}
       <Image
-        src="/assets/BannerAilsonArena.webp"
+        src="/assets/BannerEvent.webp"
         alt=""
         fill
         priority
@@ -162,11 +162,16 @@ export function Evento() {
             variants={childReveal(0.7)}
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-end"
           >
-            <a href="#" className="btn-cta-primary sm:order-2">
+            <a
+              href="https://www.sympla.com.br/evento/curitiba-lancamento-do-livro-como-montar-o-time-dos-sonhos-do-condominio/3480848"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta-primary sm:order-2"
+            >
               Reservar minha vaga
             </a>
             <a href="#livros" className="btn-cta-glass sm:order-1">
-              Conhecer obra
+              Conhecer a obra
             </a>
           </motion.div>
 
@@ -198,7 +203,7 @@ export function Evento() {
           className="relative -mx-6 sm:-mx-10 mt-12 h-[70vh] overflow-hidden lg:hidden"
         >
           <Image
-            src="/assets/BannerAilsonArena.webp"
+            src="/assets/BannerEvent.webp"
             alt="Ailton Tertuliano no evento de gestão condominial em Curitiba"
             fill
             sizes="(min-width: 1024px) 0px, 100vw"

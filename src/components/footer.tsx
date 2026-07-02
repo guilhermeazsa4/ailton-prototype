@@ -36,7 +36,9 @@ export function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href="#"
+              href="https://wa.me/5512997947966"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="WhatsApp"
               className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center text-black hover:bg-black/10 transition-colors duration-300"
             >
