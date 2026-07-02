@@ -43,8 +43,8 @@ export function Hero() {
           alt="Ailton Tertuliano, autor e palestrante de gestão condominial"
           width={1715}
           height={1785}
-          sizes="(min-width: 1024px) 507px, 0px"
-          className="h-auto max-h-[760px] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
+          sizes="(min-width: 1024px) 620px, 0px"
+          className="h-auto max-h-[880px] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.38)]"
         />
       </motion.div>
 
